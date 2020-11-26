@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/authFragment"
-        android:name="com.ads.juused.ui.auth.fragments.AuthFragment"
+        android:name="com.ads.juused.ui.auth.login.AuthFragment"
         android:label="fragment_auth"
         tools:layout="@layout/fragment_auth">
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.ads.juused.ui.auth.register.LoginFragment"
+        android:name="com.ads.juused.ui.auth.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login">
         <action
@@ -28,9 +28,9 @@
     </fragment>
     <fragment
         android:id="@+id/languageFragment"
-        android:name="com.ads.juused.ui.auth.register.LanguageFragment"
+        android:name="com.ads.juused.ui.auth.register.CountryFragment"
         android:label="fragment_language"
-        tools:layout="@layout/fragment_language">
+        tools:layout="@layout/fragment_country">
         <action
             android:id="@+id/action_languageFragment_to_emailFragment"
             app:destination="@id/emailFragment" />
@@ -45,8 +45,8 @@
             app:destination="@id/mobileFragment"
             app:enterAnim="@anim/fragment_fade_enter"
             app:exitAnim="@anim/fragment_fade_exit"
-            app:popEnterAnim="@anim/fragment_fade_enter"
-            app:popExitAnim="@anim/fragment_fade_exit" />
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/mobileFragment"
@@ -58,8 +58,8 @@
             app:destination="@id/otpFragment"
             app:enterAnim="@anim/fragment_fade_enter"
             app:exitAnim="@anim/fragment_fade_exit"
-            app:popEnterAnim="@anim/fragment_fade_enter"
-            app:popExitAnim="@anim/fragment_fade_exit" />
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/otpFragment"
@@ -71,8 +71,8 @@
             app:destination="@id/registerFragment"
             app:enterAnim="@anim/fragment_fade_enter"
             app:exitAnim="@anim/fragment_fade_exit"
-            app:popEnterAnim="@anim/fragment_fade_enter"
-            app:popExitAnim="@anim/fragment_fade_exit" />
+             app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -80,7 +80,7 @@
         android:label="fragment_register"
         app:enterAnim="@anim/fragment_fade_enter"
         app:exitAnim="@anim/fragment_fade_exit"
-        app:popEnterAnim="@anim/fragment_fade_enter"
-        app:popExitAnim="@anim/fragment_fade_exit"
+         app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
         tools:layout="@layout/fragment_register" />
 </navigation>

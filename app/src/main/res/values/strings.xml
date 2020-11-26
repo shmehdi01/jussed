@@ -16,7 +16,7 @@
     <string name="welcome_back">Welcome back!</string>
     <string name="your_email_mobile">Your email / mobile</string>
     <string name="password">Password</string>
-    <string name="don_t_have_an_account_create_one">Don’t have an account? Create one.</string>
+    <string name="don_t_have_an_account_create_one">Don’t have an account? <u>Create one.</u></string>
     <string name="what_is_your_mobile_number">What is your mobile number?</string>
     <string name="mobile_number">Mobile number</string>
     <string name="change_country_code">Change country code</string>
