@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBlack"
+    android:clickable="true"
     tools:context=".ui.auth.register.EmailFragment">
 
     <ImageView
@@ -110,6 +111,7 @@
             android:background="@drawable/bg_login_btn"
             android:fontFamily="@font/montserrat_bold"
             android:text="@string/_continue"
+            android:clickable="false"
             android:transitionName="llGoogle"
             android:textAllCaps="false"
             android:backgroundTint="@color/colorGreyDark"

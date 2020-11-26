@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBlack"
+    android:clickable="true"
+    android:focusable="true"
     tools:context=".ui.auth.register.MobileFragment">
 
     <ImageView
@@ -131,7 +133,8 @@
             android:layout_marginBottom="40dp"
             android:background="@drawable/bg_login_btn"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Continue"
+            android:text="@string/_continue"
+            android:clickable="false"
             android:transitionName="llGoogle"
             android:textAllCaps="false"
             android:backgroundTint="@color/colorGreyDark"

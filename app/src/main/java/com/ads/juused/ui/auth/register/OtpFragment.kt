@@ -1,7 +1,7 @@
 package com.ads.juused.ui.auth.register
 
 import android.os.Bundle
-import android.text.Editable
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -47,10 +47,10 @@ class OtpFragment :  BaseFragment<BaseViewModel, FragmentOtpBinding>() {
             enableColor = ContextCompat.getColor(requireContext(),R.color.colorRedAccent)
         )
 
-        binding.etOtp1.validateEmpty()
-        binding.etOtp2.validateEmpty()
-        binding.etOtp3.validateEmpty()
-        binding.etOtp4.validateEmpty()
+        binding.etOtp1.setOtpTextChange(prevOtpField = null, nextOtpField = binding.etOtp2)
+        binding.etOtp2.setOtpTextChange(prevOtpField = binding.etOtp1,nextOtpField =  binding.etOtp3)
+        binding.etOtp3.setOtpTextChange(prevOtpField = binding.etOtp2,nextOtpField =  binding.etOtp4)
+        binding.etOtp4.setOtpTextChange(prevOtpField = binding.etOtp3,nextOtpField =  null)
 
     }
 
@@ -60,21 +60,44 @@ class OtpFragment :  BaseFragment<BaseViewModel, FragmentOtpBinding>() {
         }
     }
 
-    private fun EditText.validateEmpty() {
-        this.doAfterTextChanged {
-            val isEmpty = getOtp().isEmpty()
-
-            binding.btnContinue.disableView(
-                disable = isEmpty,
-                disableColor = ContextCompat.getColor(requireContext(),R.color.colorGreyDark),
-                enableColor = ContextCompat.getColor(requireContext(),R.color.colorRedAccent)
-            )
-        }
-    }
-
     private fun getOtp() =
         binding.etOtp1.trimText() +
                 binding.etOtp1.trimText() +
                 binding.etOtp1.trimText() +
                 binding.etOtp1.trimText()
+
+
+
+    private fun EditText.setOtpTextChange(nextOtpField: EditText?, prevOtpField: EditText?) {
+
+        setOnKeyListener { _, keyCode, _ ->
+            if (keyCode == KeyEvent.KEYCODE_DEL) {
+                nextOtpField?.isEnabled = false
+                prevOtpField?.isEnabled = true
+                prevOtpField?.requestFocus()
+            }
+            false
+        }
+
+
+        if(prevOtpField != null) {
+            isEnabled = false
+        }
+
+        this.doAfterTextChanged {
+
+            if (text.toString().isNotEmpty()) {
+                    nextOtpField?.isEnabled = true
+                    prevOtpField?.isEnabled = false
+                    nextOtpField?.requestFocus()
+                    nextOtpField?.setText("")
+
+            }
+            binding.btnContinue.disableView(
+                disable = getOtp().isEmpty(),
+                disableColor = ContextCompat.getColor(requireContext(),R.color.colorGreyDark),
+                enableColor = ContextCompat.getColor(requireContext(),R.color.colorRedAccent)
+            )
+        }
+    }
 }
