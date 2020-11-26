@@ -30,6 +30,8 @@ class EmailFragment :  BaseFragment<BaseViewModel, FragmentEmailBinding>() {
         container: ViewGroup?
     ): FragmentEmailBinding = FragmentEmailBinding.inflate(inflater,container,false)
 
+    override fun enableBackPress(): Boolean = true
+
     private fun bindClicks() {
         binding.btnContinue.setOnClickListener {
             navController.navigate(R.id.action_emailFragment_to_mobileFragment)

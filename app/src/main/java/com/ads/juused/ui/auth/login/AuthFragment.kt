@@ -1,4 +1,4 @@
-package com.ads.juused.ui.auth.fragments
+package com.ads.juused.ui.auth.login
 
 import android.os.Bundle
 import android.view.LayoutInflater

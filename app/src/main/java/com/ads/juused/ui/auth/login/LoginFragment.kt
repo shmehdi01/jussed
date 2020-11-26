@@ -1,4 +1,4 @@
-package com.ads.juused.ui.auth.register
+package com.ads.juused.ui.auth.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -53,6 +53,8 @@ class LoginFragment : BaseFragment<BaseViewModel,FragmentLoginBinding>() {
             }
         }
     }
+
+    override fun enableBackPress(): Boolean = true
 
     private fun bindClicks() {
         binding.llFacebook.setOnClickListener {

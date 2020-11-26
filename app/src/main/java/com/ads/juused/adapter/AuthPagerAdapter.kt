@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.ads.juused.R
-import com.ads.juused.ui.auth.fragments.BannerFragment
+import com.ads.juused.ui.auth.login.BannerFragment
 
 class AuthSliderAdapter(private val context: Context, fm: FragmentManager) : FragmentPagerAdapter(fm) {
 

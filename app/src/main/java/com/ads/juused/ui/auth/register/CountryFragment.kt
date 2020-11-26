@@ -1,7 +1,6 @@
 package com.ads.juused.ui.auth.register
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,12 +9,12 @@ import androidx.navigation.Navigation
 import androidx.transition.TransitionInflater
 import com.ads.juused.R
 import com.ads.juused.base.BaseFragment
-import com.ads.juused.databinding.FragmentLanguageBinding
+import com.ads.juused.databinding.FragmentCountryBinding
 import com.ads.juused.utility.showToast
 import solo.android.ui.base.BaseViewModel
 
 
-class LanguageFragment : BaseFragment<BaseViewModel, FragmentLanguageBinding>() {
+class CountryFragment : BaseFragment<BaseViewModel, FragmentCountryBinding>() {
 
     private lateinit var navController: NavController
 
@@ -36,7 +35,7 @@ class LanguageFragment : BaseFragment<BaseViewModel, FragmentLanguageBinding>() 
             maxValue = values.size-1
             displayedValues = values
             wrapSelectorWheel = true
-            setOnValueChangedListener { _, oldVal, newVal ->
+            setOnValueChangedListener { _, _, newVal ->
                 showToast(values[newVal])
             }
         }
@@ -48,7 +47,9 @@ class LanguageFragment : BaseFragment<BaseViewModel, FragmentLanguageBinding>() 
     override fun getViewBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
-    ): FragmentLanguageBinding = FragmentLanguageBinding.inflate(inflater,container,false)
+    ): FragmentCountryBinding = FragmentCountryBinding.inflate(inflater,container,false)
+
+    override fun enableBackPress(): Boolean = true
 
     private fun bindClicks() {
         binding.btnContinue.setOnClickListener {

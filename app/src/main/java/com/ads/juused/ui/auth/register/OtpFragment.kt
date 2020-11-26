@@ -30,6 +30,8 @@ class OtpFragment :  BaseFragment<BaseViewModel, FragmentOtpBinding>() {
         container: ViewGroup?
     ): FragmentOtpBinding = FragmentOtpBinding.inflate(inflater,container,false)
 
+    override fun enableBackPress(): Boolean = true
+
     private fun bindClicks() {
         binding.btnContinue.setOnClickListener {
             navController.navigate(R.id.action_otpFragment_to_registerFragment)

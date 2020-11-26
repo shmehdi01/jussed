@@ -29,6 +29,8 @@ class RegisterFragment :  BaseFragment<BaseViewModel, FragmentRegisterBinding>()
         container: ViewGroup?
     ): FragmentRegisterBinding = FragmentRegisterBinding.inflate(inflater,container,false)
 
+    override fun enableBackPress(): Boolean = true
+    
     private fun bindClicks() {
 
     }
