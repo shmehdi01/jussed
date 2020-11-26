@@ -55,7 +55,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:textColor="@color/colorWhite"
             android:fontFamily="@font/poppins_regular"
-            android:text="What is your mobile number?"/>
+            android:text="@string/what_is_your_mobile_number"/>
 
 
         <androidx.constraintlayout.widget.Guideline
@@ -98,7 +98,7 @@
                 android:background="@null"
                 android:fontFamily="@font/montserrat_regular"
                 android:textColor="@color/colorWhite"
-                android:hint="Mobile number"
+                android:hint="@string/mobile_number"
                 android:maxLength="10"
                 android:inputType="phone"
                 android:textColorHint="@color/colorWhite_10" />
@@ -118,7 +118,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:textColor="@color/colorCyanAccent"
             android:fontFamily="@font/poppins_regular"
-            android:text="Change country code"/>
+            android:text="@string/change_country_code"/>
 
 
 

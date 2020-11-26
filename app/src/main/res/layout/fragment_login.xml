@@ -80,7 +80,7 @@
             android:layout_marginStart="@dimen/_28sdp"
             android:layout_marginTop="@dimen/_14sdp"
             android:fontFamily="@font/montserrat_semibold"
-            android:text="Welcome back!"
+            android:text="@string/welcome_back"
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/_20ssp"
             app:layout_constraintStart_toStartOf="parent"
@@ -125,7 +125,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_18sdp"
                     android:layout_marginEnd="@dimen/_18sdp"
-                    android:hint="Your email / mobile"
+                    android:hint="@string/your_email_mobile"
                     android:textColorHint="@color/colorGrey"
                     app:hintAnimationEnabled="false"
                     app:hintTextAppearance="@style/TextAppearanceHint">
@@ -147,7 +147,7 @@
                     android:layout_marginStart="@dimen/_18sdp"
                     android:layout_marginTop="@dimen/_8sdp"
                     android:layout_marginEnd="@dimen/_18sdp"
-                    android:hint="Password"
+                    android:hint="@string/password"
                     android:textColorHint="@color/colorGrey"
                     app:hintAnimationEnabled="false"
                     app:hintTextAppearance="@style/TextAppearanceHint"
@@ -235,7 +235,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_8sdp"
                     android:fontFamily="@font/montserrat_bold"
-                    android:text="Sign in with Google"
+                    android:text="@string/sign_in_with_google"
                     android:textColor="@color/colorBlack"
                     android:visibility="gone" />
 
@@ -267,7 +267,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_8sdp"
                     android:fontFamily="@font/montserrat_bold"
-                    android:text="Log in with Facebook"
+                    android:text="@string/log_in_with_facebook"
                     android:textColor="@color/colorWhite"
                     android:visibility="gone" />
 
@@ -286,7 +286,7 @@
             android:background="?attr/selectableItemBackground"
             android:fontFamily="@font/poppins_medium"
             android:padding="@dimen/_8sdp"
-            android:text="Don’t have an account? Create one."
+            android:text="@string/don_t_have_an_account_create_one"
             android:textAlignment="center"
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/_10ssp"

@@ -61,5 +61,5 @@
         android:layout_marginBottom="30dp"
         android:fontFamily="@font/poppins_regular"
         android:textColor="@color/colorWhite"
-        android:text="© All right received Games"/>
+        android:text="@string/all_right_received_games"/>
 </FrameLayout>

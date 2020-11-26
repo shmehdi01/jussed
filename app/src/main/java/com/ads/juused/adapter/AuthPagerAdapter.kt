@@ -17,20 +17,20 @@ class AuthSliderAdapter(private val context: Context, fm: FragmentManager) : Fra
 
     private val header1 = arrayListOf(
         "",
-        "Pick Up",
-        "Draft Position Groups"
+        context.getString(R.string.pick_up),
+        context.getString(R.string.draft_position_groups)
     )
 
     private val header2 = arrayListOf(
         "",
-        "Game",
-        "not Players"
+        context.getString(R.string.game),
+        context.getString(R.string.lazy_player)
     )
 
     val descriptions = arrayListOf(
         "",
-        "H2H matchups made better. Let the draw of the players determine your fate",
-        "A modernized approach to Fantasy. Don't worry about players just teams")
+        context.getString(R.string.auth_slider_desc_1),
+        context.getString(R.string.auth_slider_desc_2))
 
 
     override fun getItem(position: Int): Fragment = BannerFragment.newInstance(images[position], header1[position], header2[position])

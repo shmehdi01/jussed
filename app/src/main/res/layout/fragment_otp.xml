@@ -55,7 +55,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:textColor="@color/colorWhite"
             android:fontFamily="@font/poppins_regular"
-            android:text="Validate your mobile number"/>
+            android:text="@string/validate_your_mobile_number"/>
 
 
         <androidx.constraintlayout.widget.Guideline
@@ -78,7 +78,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:textColor="@color/colorCyanAccent"
             android:fontFamily="@font/poppins_regular"
-            android:text="Enter OTP"/>
+            android:text="@string/enter_otp"/>
 
 
         <LinearLayout
@@ -169,7 +169,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:textColor="@color/colorRedAccent"
             android:fontFamily="@font/poppins_regular"
-            android:text="Resend OTO 02:00"/>
+            android:text="@string/resend_oto_02_00"/>
 
 
 
@@ -182,7 +182,7 @@
             android:layout_marginBottom="40dp"
             android:background="@drawable/bg_login_btn"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Continue"
+            android:text="@string/_continue"
             android:transitionName="llGoogle"
             android:textAllCaps="false"
             android:backgroundTint="@color/colorGreyDark"

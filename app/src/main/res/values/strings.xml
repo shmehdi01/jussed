@@ -1,5 +1,36 @@
 <resources>
     <string name="app_name">Juused</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="all_right_received_games">© All right received Games</string>
+    <string name="welcome_to_juused">Welcome to JUUSED</string>
+    <string name="log_in">Log In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="log_in_with_facebook">Log in with Facebook</string>
+    <string name="what_is_your_email_address">What is your email address?</string>
+    <string name="email_address">Email address</string>
+    <string name="already_have_an_account">Already have an account</string>
+    <string name="let_s_get_started">Let\'s get started</string>
+    <string name="what_country_do_you_live_in">what country do you live in?</string>
+    <string name="_continue">Continue</string>
+    <string name="welcome_back">Welcome back!</string>
+    <string name="your_email_mobile">Your email / mobile</string>
+    <string name="password">Password</string>
+    <string name="don_t_have_an_account_create_one">Don’t have an account? Create one.</string>
+    <string name="what_is_your_mobile_number">What is your mobile number?</string>
+    <string name="mobile_number">Mobile number</string>
+    <string name="change_country_code">Change country code</string>
+    <string name="validate_your_mobile_number">Validate your mobile number</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="resend_oto_02_00">Resend OTO 02:00</string>
+    <string name="enter_is_your_name">Enter is your name?</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="user_name">User name</string>
+    <string name="pick_up">Pick Up</string>
+    <string name="draft_position_groups">Draft Position Groups</string>
+    <string name="game">Game</string>
+    <string name="lazy_player">not Players</string>
+    <string name="auth_slider_desc_1">H2H matchups made better. Let the draw of the players determine your fate</string>
+    <string name="auth_slider_desc_2">A modernized approach to Fantasy. Don\'t worry about players just teams</string>
 </resources>
