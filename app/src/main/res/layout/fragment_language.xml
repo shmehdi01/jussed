@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlack"
+    tools:context=".ui.auth.register.LanguageFragment">
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="-100dp"
+        android:layout_marginBottom="60dp"
+        android:alpha="0.3"
+        android:src="@drawable/bg_circle_outline" />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="-30dp"
+        android:layout_marginBottom="40dp"
+        android:alpha="0.3"
+        android:backgroundTint="@color/colorBlackCharcoal"
+        android:src="@drawable/bg_circle_outline_medium" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_20ssp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@id/iv_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Let's get started"/>
+
+        <TextView
+            android:id="@+id/tv_sub_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_10ssp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@id/tv_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/poppins_regular"
+            android:text="what country do you live in?"/>
+
+        <NumberPicker
+            android:id="@+id/np"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:theme="@style/AppTheme.Picker"
+            app:layout_constraintTop_toBottomOf="@id/tv_sub_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <Button
+            android:id="@+id/btn_continue"
+            android:layout_width="@dimen/dimen_230"
+            android:layout_height="@dimen/dimen_60"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/bg_login_btn"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Continue"
+            android:transitionName="llGoogle"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

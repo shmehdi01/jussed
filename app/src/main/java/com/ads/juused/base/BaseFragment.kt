@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.transition.ChangeBounds
 import androidx.viewbinding.ViewBinding
 
 abstract class BaseFragment<VM:ViewModel,B:ViewBinding>: Fragment() {
@@ -19,6 +20,15 @@ abstract class BaseFragment<VM:ViewModel,B:ViewBinding>: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+
+//        sharedElementEnterTransition = ChangeBounds().apply {
+//            duration = 750
+//        }
+//        sharedElementReturnTransition= ChangeBounds().apply {
+//            duration = 750
+//        }
+
         binding = getViewBinding(inflater,container)
         //viewModel = ViewModelProvider(this)[getViewModel()]
         return binding.root
