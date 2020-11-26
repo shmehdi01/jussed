@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><!-- translating button from right to left -->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillEnabled="true"
+    android:interpolator="@android:anim/accelerate_interpolator"
+    android:shareInterpolator="false">
+    <translate
+        android:duration="2000"
+        android:fromYDelta="60%p"
+        android:toYDelta="0%p"
+        />
+</set>

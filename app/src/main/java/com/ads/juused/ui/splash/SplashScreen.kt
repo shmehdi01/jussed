@@ -1,34 +1,67 @@
 package com.ads.juused.ui.splash
 
+import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import butterknife.BindView
-import butterknife.ButterKnife
-import com.ads.juused.R
-import com.ads.juused.base.BaseActivity
+import android.os.Handler
+import android.os.Looper
+import android.view.View
+import android.view.animation.Animation
+import android.view.animation.TranslateAnimation
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityOptionsCompat
+import com.ads.juused.databinding.ActivitySplashBinding
+import com.ads.juused.ui.auth.AuthActivity
 
 
-class SplashScreen : BaseActivity() {
+class SplashScreen : AppCompatActivity() {
 
-    @BindView(R.id.rv_splash)
-    lateinit var rvSplash:RecyclerView
+    private lateinit var binding: ActivitySplashBinding
 
-    override fun getResourceId(): Int {
-        return R.layout.activity_splash
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivitySplashBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        startAnim()
     }
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
-        ButterKnife.bind(this)
+    private fun startAnim() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            binding.ivBackground.visibility = View.VISIBLE
+            val animate = TranslateAnimation(
+                0f,  // fromXDelta
+                0f,  // toXDelta
+                0f,  // fromYDelta
+                (binding.ivBackground.height.toFloat()/2)*-1
+            ) // toYDelta
 
+            animate.duration = 3000
+            animate.fillAfter = true
+            binding.ivBackground.startAnimation(animate)
+
+            animate.setAnimationListener(object : Animation.AnimationListener {
+                override fun onAnimationRepeat(p0: Animation?) {
+
+                }
+
+                override fun onAnimationEnd(p0: Animation?) {
+                    goToNextPage()
+                }
+
+                override fun onAnimationStart(p0: Animation?) {
+                }
+
+            })
+        }, 1000)
     }
 
-    fun setUpRecyclerView() {
-//        val mLinearLayoutManager = LinearLayoutManager(this)
-//        mLinearLayoutManager.stackFromEnd = true
-//        rvSplash.setLayoutManager(mLinearLayoutManager)
-//        rvSplash.scrollToPosition(mMessages.Count - 1)
+    private fun goToNextPage() {
+        val activityOptionsCompat =
+            ActivityOptionsCompat.makeSceneTransitionAnimation(this, binding.ivLogo, "logo")
+        val intent = Intent(this, AuthActivity::class.java)
+
+        startActivity(intent, activityOptionsCompat.toBundle())
+        //overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+        finish()
     }
+
 }

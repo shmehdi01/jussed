@@ -6,7 +6,6 @@ import android.os.PersistableBundle
 import android.view.LayoutInflater
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
-import butterknife.ButterKnife
 import com.ads.juused.R
 
 
@@ -14,15 +13,16 @@ abstract class BaseActivity : AppCompatActivity() {
 
     lateinit var baseContainer: RelativeLayout
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
-        setContentView(R.layout.base_activity)
-        baseContainer = findViewById(R.id.rl_base_container)
-        setLayout()
-        ButterKnife.bind(this)
-    }
+//    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
+//        super.onCreate(savedInstanceState, persistentState)
+////        setContentView(R.layout.base_activity)
+////        baseContainer = findViewById(R.id.rl_base_container)
+////        setLayout()
+//        //ButterKnife.bind(this)
+//    }
 
-    abstract fun getResourceId(): Int
+    fun getResourceId(): Int = -1
+
     open fun setLayout() {
         if (getResourceId() != -1) {
             removeLayout()
