@@ -12,6 +12,7 @@ import androidx.transition.TransitionInflater
 import com.ads.juused.R
 import com.ads.juused.base.BaseFragment
 import com.ads.juused.databinding.FragmentLoginBinding
+import com.ads.juused.ui.home.HomeActivity
 import com.ads.juused.utility.*
 import solo.android.ui.base.BaseViewModel
 
@@ -106,6 +107,8 @@ class LoginFragment : BaseFragment<BaseViewModel,FragmentLoginBinding>() {
             validate {
                 //TODO LOGIN API
             }
+
+            startNewActivity(HomeActivity::class.java)
         }
     }
 
