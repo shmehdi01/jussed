@@ -75,6 +75,7 @@
                 android:background="@drawable/bg_circle_outline">
 
                 <ImageView
+                    android:id="@+id/iv_user"
                     android:layout_width="@dimen/_60sdp"
                     android:layout_height="@dimen/_60sdp"
                     android:layout_gravity="center"
@@ -84,6 +85,7 @@
             </FrameLayout>
 
             <ImageView
+                android:id="@+id/iv_image_pick"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
