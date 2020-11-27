@@ -1,5 +1,6 @@
 package com.ads.juused.ui.home.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import androidx.core.content.ContextCompat
 import com.ads.juused.R
 import com.ads.juused.base.BaseFragment
 import com.ads.juused.databinding.FragmentHomeBinding
+import com.ads.juused.ui.team.TeamActivity
 import com.ads.juused.utility.setBgColorAnim
 import com.ads.juused.utility.showToast
 import com.ads.juused.utility.tint
@@ -89,6 +91,10 @@ class HomeFragment : BaseFragment<BaseViewModel,FragmentHomeBinding>(), View.OnC
 
         binding.ivMenu.setOnClickListener {
 
+        }
+
+        binding.flTeam.setOnClickListener {
+            startActivity(Intent(requireActivity(), TeamActivity::class.java))
         }
     }
 
