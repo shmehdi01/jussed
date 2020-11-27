@@ -230,7 +230,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
                 android:fontFamily="@font/poppins_regular"
-                android:text="Cricket"
+                android:text="@string/cricket"
                 android:textColor="@color/colorRedAccent"
                 android:textSize="@dimen/_9ssp" />
 
@@ -268,7 +268,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
                 android:fontFamily="@font/poppins_regular"
-                android:text="Football"
+                android:text="@string/football"
                 android:textColor="@color/colorHomeOption"
                 android:textSize="@dimen/_9ssp" />
 
@@ -306,7 +306,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
                 android:fontFamily="@font/poppins_regular"
-                android:text="Basketball"
+                android:text="@string/basketball"
                 android:textColor="@color/colorHomeOption"
                 android:textSize="@dimen/_9ssp" />
 
@@ -344,7 +344,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
                 android:fontFamily="@font/poppins_regular"
-                android:text="NFL"
+                android:text="@string/nfl"
                 android:textColor="@color/colorHomeOption"
                 android:textSize="@dimen/_9ssp" />
 
@@ -382,7 +382,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
                 android:fontFamily="@font/poppins_regular"
-                android:text="Baseball"
+                android:text="@string/baseball"
                 android:textColor="@color/colorHomeOption"
                 android:textSize="@dimen/_9ssp" />
 
@@ -446,7 +446,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Player"
+                        android:text="@string/player"
                         android:textColor="@color/colorDarkText"
                         android:textSize="@dimen/_22ssp"
                         android:fontFamily="@font/poppins_bold"/>
@@ -499,7 +499,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Team"
+                        android:text="@string/team"
                         android:textColor="@color/colorDarkText"
                         android:textSize="@dimen/_22ssp"
                         android:fontFamily="@font/poppins_bold"/>
@@ -552,7 +552,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Jackpot"
+                        android:text="@string/jackpot"
                         android:textColor="@color/colorDarkText"
                         android:textSize="@dimen/_22ssp"
                         android:fontFamily="@font/poppins_bold"/>
@@ -617,7 +617,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Customized"
+                        android:text="@string/customized"
                         android:textColor="@color/colorGreyText"
                         android:textSize="@dimen/_22ssp"
                         android:fontFamily="@font/poppins_bold"/>

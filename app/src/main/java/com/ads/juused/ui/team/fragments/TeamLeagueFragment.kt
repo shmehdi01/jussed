@@ -24,7 +24,7 @@ class TeamLeagueFragment : BaseFragment<BaseViewModel,FragmentTeamLeagueBinding>
 
         navController = Navigation.findNavController(view)
 
-        setToolbar(title = "Team Leagues")
+        setToolbar(title = getString(R.string.team_leagues))
         setUpRecycler()
     }
 

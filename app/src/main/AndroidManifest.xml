@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.ads.juused">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,9 +14,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
-        <activity android:name=".ui.team.TeamActivity"></activity>
+        android:usesCleartextTraffic="true"
+        tools:targetApi="n">
+
+        <activity android:name=".ui.team.TeamActivity" />
         <activity android:name=".ui.home.HomeActivity" />
+        <activity android:name=".ui.auth.AuthActivity" />
+        <activity android:name=".ui.MainActivity" />
+        <activity
+            android:name=".ui.splash.SplashScreen"
+            android:theme="@style/SplashAppTheme" />
 
         <activity-alias
             android:name=".Launcher"
@@ -27,11 +35,6 @@
             </intent-filter>
         </activity-alias>
 
-        <activity android:name=".ui.auth.AuthActivity" />
-        <activity android:name=".ui.MainActivity" />
-        <activity
-            android:name=".ui.splash.SplashScreen"
-            android:theme="@style/SplashAppTheme" />
     </application>
 
 </manifest>

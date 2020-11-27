@@ -41,4 +41,15 @@
     <string name="firstname_empty_err">First name is empty</string>
     <string name="last_name_empty_err">Last name is empty</string>
     <string name="username_is_empty">Username is empty</string>
+    <string name="player">Player</string>
+    <string name="team">Team</string>
+    <string name="jackpot">Jackpot</string>
+    <string name="customized">Customized</string>
+    <string name="cricket">Cricket</string>
+    <string name="football">Football</string>
+    <string name="basketball">Basketball</string>
+    <string name="nfl">NFL</string>
+    <string name="baseball">Baseball</string>
+    <string name="team_leagues">Team Leagues</string>
+    <string name="team_contests">Team Contests</string>
 </resources>

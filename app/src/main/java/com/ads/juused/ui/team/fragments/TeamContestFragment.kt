@@ -20,7 +20,7 @@ class TeamContestFragment : BaseFragment<BaseViewModel,FragmentTeamContestsBindi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setToolbar(title = "Team Contests")
+        setToolbar(title = getString(R.string.team_contests))
         setUpRecycler()
     }
 
