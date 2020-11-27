@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlack"
+    android:clickable="true"
+    android:focusable="true"
+    tools:context=".ui.auth.register.MobileFragment">
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="-100dp"
+        android:layout_marginBottom="60dp"
+        android:alpha="0.3"
+        android:src="@drawable/bg_circle_outline" />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="-30dp"
+        android:layout_marginBottom="40dp"
+        android:alpha="0.3"
+        android:backgroundTint="@color/colorBlackCharcoal"
+        android:src="@drawable/bg_circle_outline_medium" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_18ssp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            app:layout_constraintTop_toBottomOf="@id/iv_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/what_is_your_mobile_number"/>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginEnd="@dimen/_25sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:background="@drawable/bg_cyan_rounder"
+            app:layout_constraintTop_toBottomOf="@id/guide"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tv_cc"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/_50sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="+1"
+                android:textSize="@dimen/_14ssp"
+                android:textColor="@color/colorWhite" />
+
+            <EditText
+                android:id="@+id/et_mobile"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/colorWhite"
+                android:hint="@string/mobile_number"
+                android:maxLength="10"
+                android:inputType="phone"
+                android:textColorHint="@color/colorWhite_10" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_already_account"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_10ssp"
+            android:textAlignment="center"
+            android:visibility="visible"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/ll_mobile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/colorCyanAccent"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/change_country_code"/>
+
+
+
+        <Button
+            android:id="@+id/btn_continue"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:layout_height="@dimen/dimen_60"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/bg_login_btn"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/_continue"
+            android:clickable="false"
+            android:transitionName="llGoogle"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/colorGreyDark"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

@@ -1,11 +1,15 @@
-package com.ads.juused.ui.auth.fragments
+package com.ads.juused.ui.auth.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.viewpager.widget.ViewPager
+import com.ads.juused.R
 import com.ads.juused.adapter.AuthSliderAdapter
 import com.ads.juused.base.BaseFragment
 import com.ads.juused.databinding.FragmentAuthBinding
@@ -15,21 +19,15 @@ import solo.android.ui.base.BaseViewModel
 
 class AuthFragment : BaseFragment<BaseViewModel, FragmentAuthBinding>() {
 
+    private lateinit var navController: NavController
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        navController = Navigation.findNavController(view)
+
         setSlider()
-
-        binding.llFacebook.setOnClickListener {
-            binding.llFacebook.expandView(true, binding.tvFbLogin)
-            binding.llGoogle.expandView(false, binding.tvGoogleSignIn)
-        }
-
-        binding.llGoogle.setOnClickListener {
-            binding.llFacebook.expandView(false, binding.tvFbLogin)
-            binding.llGoogle.expandView(true, binding.tvGoogleSignIn)
-        }
-
+        bindClicks()
     }
 
     override fun getViewModel(): Class<BaseViewModel> = BaseViewModel::class.java
@@ -74,7 +72,33 @@ class AuthFragment : BaseFragment<BaseViewModel, FragmentAuthBinding>() {
             changeWidth(140f.toInt()) {
                 tv.goneWithFade()
             }
+        }
+    }
 
+    private fun bindClicks() {
+        binding.btnLogin.setOnClickListener {
+            val extras = FragmentNavigatorExtras(
+                binding.ivGoogle to "google",
+                binding.ivFacebook to "facebook",
+                binding.llGoogle to "llGoogle",
+                binding.llFacebook to "llFacebook"
+            )
+
+            navController.navigate(R.id.action_authFragment_to_loginFragment,null,null, extras)
+        }
+
+        binding.btnSignUp.setOnClickListener {
+            navController.navigate(R.id.action_authFragment_to_languageFragment)
+        }
+
+        binding.llFacebook.setOnClickListener {
+            binding.llFacebook.expandView(true, binding.tvFbLogin)
+            binding.llGoogle.expandView(false, binding.tvGoogleSignIn)
+        }
+
+        binding.llGoogle.setOnClickListener {
+            binding.llFacebook.expandView(false, binding.tvFbLogin)
+            binding.llGoogle.expandView(true, binding.tvGoogleSignIn)
         }
     }
 }
