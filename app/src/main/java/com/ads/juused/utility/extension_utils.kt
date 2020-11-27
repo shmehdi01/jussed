@@ -5,6 +5,7 @@ import android.app.Activity
 import android.content.*
 import android.content.Context.CLIPBOARD_SERVICE
 import android.content.pm.PackageManager
+import android.content.res.ColorStateList
 import android.graphics.Color
 import android.net.Uri
 import android.provider.Settings
@@ -402,3 +403,34 @@ fun Float.toDp(context: Context)
         = TypedValue.applyDimension(
     TypedValue.COMPLEX_UNIT_DIP, this, context.resources.displayMetrics
 ).roundToInt();
+
+fun View.disableView(disable: Boolean, disableColor: Int =  -1, enableColor: Int = -1) {
+    if(disable) {
+        isClickable = false
+        if(disableColor == -1) {
+            alpha = 0.5f
+        }
+        else {
+            //setBackgroundResource(disableColor)
+            backgroundTintList = ColorStateList.valueOf(disableColor)
+
+        }
+    }
+    else {
+        isClickable = true
+        if(enableColor == -1) {
+            alpha = 1.0f
+        }
+        else {
+            //setBackgroundResource(enableColor)
+            backgroundTintList = ColorStateList.valueOf(enableColor)
+        }
+    }
+}
+
+fun View.disableView(disable: Boolean) {
+    isClickable = disable
+    alpha = if(disable) 0.5f  else 1.0f
+}
+
+fun EditText.trimText() = text.toString().trim()

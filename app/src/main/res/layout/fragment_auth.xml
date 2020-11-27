@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:attrs="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorBlack"
-    tools:context=".ui.auth.fragments.AuthFragment">
+    tools:context=".ui.auth.login.AuthFragment">
 
     <ImageView
         android:layout_width="350dp"
@@ -122,31 +122,33 @@
                 android:fontFamily="@font/montserrat_semibold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:text="Welcome to JUUSED"/>
+                android:text="@string/welcome_to_juused"/>
 
             <Button
                 android:id="@+id/btn_login"
                 android:layout_width="@dimen/dimen_230"
                 android:layout_height="@dimen/dimen_60"
                 android:layout_marginTop="40dp"
+                android:fontFamily="@font/montserrat_bold"
                 android:background="@drawable/bg_login_btn"
                 android:textColor="@color/colorWhite"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_welcome_text"
-                android:text="Log In"/>
+                android:text="@string/log_in"/>
 
             <Button
                 android:id="@+id/btn_sign_up"
                 android:layout_width="@dimen/dimen_230"
                 android:layout_height="@dimen/dimen_60"
                 android:layout_marginTop="@dimen/dimen_12"
+                android:fontFamily="@font/montserrat_bold"
                 android:textColor="@color/colorWhite"
                 android:background="@drawable/bg_sign_up_btn"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btn_login"
-                android:text="Sign Up"/>
+                android:text="@string/sign_up"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -163,6 +165,7 @@
                    android:layout_marginEnd="6dp"
                    android:paddingStart="@dimen/_8sdp"
                    android:paddingEnd="@dimen/_8sdp"
+                   android:transitionName="llGoogle"
                    android:gravity="center_vertical"
                    android:background="@drawable/bg_google_btn"
                    android:orientation="horizontal">
@@ -171,6 +174,7 @@
                        android:id="@+id/iv_google"
                        android:layout_width="40dp"
                        android:layout_height="40dp"
+                       android:transitionName="google"
                        android:src="@drawable/ic_google"/>
 
                    <TextView
@@ -181,7 +185,7 @@
                        android:textColor="@color/colorBlack"
                        android:visibility="gone"
                        android:fontFamily="@font/montserrat_bold"
-                       android:text="Sign in with Google"/>
+                       android:text="@string/sign_in_with_google"/>
 
 
                </LinearLayout>
@@ -194,6 +198,7 @@
                     android:gravity="center"
                     android:paddingStart="@dimen/_1sdp"
                     android:paddingEnd="@dimen/_8sdp"
+                    android:transitionName="llFacebook"
                     android:background="@drawable/bg_facebook_btn"
                     android:orientation="horizontal">
 
@@ -201,6 +206,7 @@
                         android:id="@+id/iv_facebook"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
+                        android:transitionName="facebook"
                         android:layout_marginStart="@dimen/_8sdp"
                         android:src="@drawable/ic_facebook"/>
 
@@ -212,14 +218,13 @@
                         android:textColor="@color/colorWhite"
                         android:visibility="gone"
                         android:fontFamily="@font/montserrat_bold"
-                        android:text="Log in with Facebook"/>
+                        android:text="@string/log_in_with_facebook"/>
 
                 </LinearLayout>
-
-
 
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
