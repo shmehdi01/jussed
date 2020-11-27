@@ -12,6 +12,9 @@ import com.ads.juused.R
 import com.ads.juused.base.BaseFragment
 import com.ads.juused.databinding.FragmentMobileBinding
 import com.ads.juused.utility.disableView
+import com.ads.juused.utility.isEmail
+import com.ads.juused.utility.isMobileNumber
+import com.ads.juused.utility.trimText
 import solo.android.ui.base.BaseViewModel
 
 
@@ -37,6 +40,35 @@ class MobileFragment : BaseFragment<BaseViewModel, FragmentMobileBinding>() {
 
     override fun enableBackPress(): Boolean = true
 
+    override fun validate(showToast: Boolean, call: () -> Unit): Boolean {
+        val message: String
+        var validated = true
+
+        binding.tlMobile.error = null
+
+        when {
+            binding.etMobile.trimText().isEmpty() -> {
+                message = getString(R.string.mobile_is_empty)
+                validated = false
+                binding.tlMobile.error = message
+                binding.etMobile.requestFocus()
+            }
+
+            !binding.etMobile.trimText().isMobileNumber() -> {
+                message = getString(R.string.mobile_is_not_valid)
+                validated = false
+                binding.tlMobile.error = message
+                binding.etMobile.requestFocus()
+            }
+        }
+
+        if(validated) {
+            call.invoke()
+        }
+
+        return validated
+    }
+
     private fun init() {
         binding.btnContinue.disableView(
             disable = true,
@@ -57,7 +89,9 @@ class MobileFragment : BaseFragment<BaseViewModel, FragmentMobileBinding>() {
 
     private fun bindClicks() {
         binding.btnContinue.setOnClickListener {
-            navController.navigate(R.id.action_mobileFragment_to_otpFragment)
+            validate {
+                navController.navigate(R.id.action_mobileFragment_to_otpFragment)
+            }
         }
     }
 }

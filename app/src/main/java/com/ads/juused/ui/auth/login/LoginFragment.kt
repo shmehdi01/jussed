@@ -12,10 +12,7 @@ import androidx.transition.TransitionInflater
 import com.ads.juused.R
 import com.ads.juused.base.BaseFragment
 import com.ads.juused.databinding.FragmentLoginBinding
-import com.ads.juused.utility.changeWidth
-import com.ads.juused.utility.goneWithFade
-import com.ads.juused.utility.toDp
-import com.ads.juused.utility.visbleWithFade
+import com.ads.juused.utility.*
 import solo.android.ui.base.BaseViewModel
 
 class LoginFragment : BaseFragment<BaseViewModel,FragmentLoginBinding>() {
@@ -41,6 +38,38 @@ class LoginFragment : BaseFragment<BaseViewModel,FragmentLoginBinding>() {
         container: ViewGroup?
     ): FragmentLoginBinding = FragmentLoginBinding.inflate(inflater,container,false)
 
+    override fun enableBackPress(): Boolean = true
+
+    override fun validate(showToast: Boolean, call: () -> Unit): Boolean {
+        val message: String
+        var validated = true
+
+        binding.tlUsername.error = null
+        binding.tlPassword.error = null
+
+        when {
+            binding.etUsername.trimText().isEmpty() -> {
+                message = getString(R.string.email_is_empty)
+                validated = false
+                binding.tlUsername.error = message
+                binding.etUsername.requestFocus()
+            }
+
+            binding.etPassword.trimText().isEmpty() -> {
+                message = getString(R.string.password_is_empty)
+                validated = false
+                binding.tlPassword.error = message
+                binding.etPassword.requestFocus()
+            }
+        }
+
+        if(validated) {
+            call.invoke()
+        }
+
+        return validated
+    }
+
     private fun View.expandView(expand: Boolean, tv: TextView) {
         if(expand) {
             changeWidth(230f.toDp(requireContext())) {
@@ -53,8 +82,6 @@ class LoginFragment : BaseFragment<BaseViewModel,FragmentLoginBinding>() {
             }
         }
     }
-
-    override fun enableBackPress(): Boolean = true
 
     private fun bindClicks() {
         binding.llFacebook.setOnClickListener {
@@ -74,5 +101,13 @@ class LoginFragment : BaseFragment<BaseViewModel,FragmentLoginBinding>() {
 
             navController.navigate(R.id.action_loginFragment_to_languageFragment,null,null, extras)
         }
+
+        binding.btnLogin.setOnClickListener {
+            validate {
+                //TODO LOGIN API
+            }
+        }
     }
+
+
 }
