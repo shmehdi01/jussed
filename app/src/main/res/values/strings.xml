@@ -52,6 +52,8 @@
     <string name="baseball">Baseball</string>
     <string name="team_leagues">Team Leagues</string>
     <string name="team_contests">Team Contests</string>
+    <string name="team_selection">Team Selection</string>
+    <string name="wager">Wager</string>
     <string name="camera">Camera</string>
     <string name="gallery">Gallery</string>
 </resources>

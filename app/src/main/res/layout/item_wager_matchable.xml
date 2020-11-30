@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_8sdp"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:background="@color/colorBlackCard">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8sdp"
+        android:background="@drawable/bg_outline_cyan"
+        android:fontFamily="@font/poppins_regular"
+        android:text="$1"
+        android:textAlignment="center"
+        android:textColor="@color/colorCyanAccent"
+        android:textSize="@dimen/_10ssp"
+        />
+
+</FrameLayout>

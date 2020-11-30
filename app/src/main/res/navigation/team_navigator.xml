@@ -23,6 +23,41 @@
         android:id="@+id/teamContestFragment"
         android:name="com.ads.juused.ui.team.fragments.TeamContestFragment"
         android:label="fragment_team_contests"
-        tools:layout="@layout/fragment_team_contests" />
+        tools:layout="@layout/fragment_team_contests" >
+        <action
+            android:id="@+id/action_teamContestFragment_to_teamSelectionFragment"
+            app:destination="@id/teamSelectionFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/teamSelectionFragment"
+        android:name="com.ads.juused.ui.team.fragments.TeamSelectionFragment"
+        android:label="fragment_team_selection"
+        tools:layout="@layout/fragment_team_selection" >
+        <action
+            android:id="@+id/action_teamSelectionFragment_to_wagerFragment"
+            app:destination="@id/wagerFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/wagerFragment"
+        android:name="com.ads.juused.ui.team.fragments.WagerFragment"
+        android:label="fragment_wager"
+        tools:layout="@layout/fragment_wager" >
+        <action
+            android:id="@+id/action_wagerFragment_to_confrimWagerFragment"
+            app:destination="@id/confrimWagerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confrimWagerFragment"
+        android:name="com.ads.juused.ui.team.fragments.ConfrimWagerFragment"
+        android:label="fragment_confrim_wager"
+        tools:layout="@layout/fragment_confrim_wager" />
 
 </navigation>
