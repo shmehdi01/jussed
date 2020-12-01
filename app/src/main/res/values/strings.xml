@@ -72,4 +72,18 @@
     <string name="risk">Risk</string>
     <string name="to_win">To Win</string>
     <string name="confirm_game">Confirm Game</string>
+    <string name="details">Details</string>
+    <string name="chance_to_win">Chance to win</string>
+    <string name="number_of_positions">Number of positions :</string>
+    <string name="number_of_bats_man">Number of bats man :</string>
+    <string name="number_of_bowlers">Number of bowlers :</string>
+    <string name="number_of_wicket_keeper">Number of wicket keeper :</string>
+    <string name="number_of_all_rounder">Number of all rounder :</string>
+    <string name="contestants">Contestants :</string>
+    <string name="spot_left">Spot Left :</string>
+    <string name="contest_details">Contest Details</string>
+    <string name="scoring">Scoring</string>
+    <string name="payout">Payout</string>
+    <string name="be_the_first_in_your_network_to_join_this_contest">Be the first in your network to join this contest.</string>
+    <string name="join">Join</string>
 </resources>

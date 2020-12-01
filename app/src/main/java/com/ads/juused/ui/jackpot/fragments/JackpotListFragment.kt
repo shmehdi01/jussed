@@ -22,7 +22,7 @@ class JackpotListFragment : BaseFragment<BaseViewModel, FragmentJackpotListBindi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setToolbar(title = "Jackpot")
+        setToolbar(title = getString(R.string.jackpot))
         navController = Navigation.findNavController(view)
         setUpRecycler()
     }

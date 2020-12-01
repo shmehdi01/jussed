@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_regular"
-        android:text="Contestants :"
+        android:text="@string/contestants"
         android:textColor="@color/colorHomeOption"
         android:textSize="@dimen/_10sdp"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_regular"
-        android:text="Spot Left :"
+        android:text="@string/spot_left"
         android:layout_marginEnd="@dimen/_12ssp"
         android:textColor="@color/colorHomeOption"
         android:textSize="@dimen/_10sdp"
@@ -109,7 +109,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_jackpot_name"
         android:textColor="@color/colorWhite"
         android:fontFamily="@font/poppins_medium"
-        android:text="Chance to win"/>
+        android:text="@string/chance_to_win"/>
 
     <View
         android:id="@+id/iv_divider_vert"

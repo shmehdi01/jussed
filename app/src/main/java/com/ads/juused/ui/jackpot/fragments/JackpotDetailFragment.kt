@@ -16,7 +16,7 @@ class JackpotDetailFragment : BaseFragment<BaseViewModel, FragmentJackpotDetailB
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setToolbar(title = "Details", tailIcon = R.drawable.ic_purse)
+        setToolbar(title = getString(R.string.details), tailIcon = R.drawable.ic_purse)
         setUpRecycler()
     }
 

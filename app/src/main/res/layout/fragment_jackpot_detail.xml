@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_regular"
-                android:text="Contestants :"
+                android:text="@string/contestants"
                 android:textColor="@color/colorHomeOption"
                 android:textSize="@dimen/_10sdp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_regular"
-                android:text="Spot Left :"
+                android:text="@string/spot_left"
                 android:layout_marginEnd="@dimen/_12ssp"
                 android:textColor="@color/colorHomeOption"
                 android:textSize="@dimen/_10sdp"
@@ -122,7 +122,7 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_jackpot_name"
                 android:textColor="@color/colorWhite"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Chance to win"/>
+                android:text="@string/chance_to_win"/>
 
             <View
                 android:id="@+id/iv_divider_vert"
@@ -180,7 +180,7 @@
                     android:background="@drawable/color_animation"
                     android:fontFamily="@font/poppins_regular"
                     android:padding="@dimen/_8sdp"
-                    android:text="Contest Details"
+                    android:text="@string/contest_details"
                     android:textAlignment="center"
                     android:textColor="@color/colorGreyText"
                     android:textSize="@dimen/_10ssp" />
@@ -204,7 +204,7 @@
                     android:background="@color/colorGreyLightButton"
                     android:fontFamily="@font/poppins_regular"
                     android:padding="@dimen/_8sdp"
-                    android:text="Scoring"
+                    android:text="@string/scoring"
                     android:textAlignment="center"
                     android:textColor="@color/colorGreyText"
                     android:textSize="@dimen/_10ssp" />
@@ -227,7 +227,7 @@
                     android:background="@color/colorGreyLightButton"
                     android:fontFamily="@font/poppins_regular"
                     android:padding="@dimen/_8sdp"
-                    android:text="Payout"
+                    android:text="@string/payout"
                     android:textAlignment="center"
                     android:textColor="@color/colorGreyText"
                     android:textSize="@dimen/_10ssp" />
@@ -274,7 +274,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:text="Be the first in your network to join this contest."/>
+                android:text="@string/be_the_first_in_your_network_to_join_this_contest"/>
 
 
             <TextView
@@ -287,7 +287,7 @@
                 android:layout_marginTop="@dimen/_12sdp"
                 app:layout_constraintTop_toBottomOf="@id/label_be_first"
                 app:layout_constraintStart_toStartOf="parent"
-                android:text="Number of positions :"/>
+                android:text="@string/number_of_positions"/>
 
 
 
@@ -325,7 +325,7 @@
                 android:layout_marginTop="@dimen/_12sdp"
                 app:layout_constraintTop_toBottomOf="@id/view_divider"
                 app:layout_constraintStart_toStartOf="parent"
-                android:text="Number of bats man :"/>
+                android:text="@string/number_of_bats_man"/>
 
 
 
@@ -351,7 +351,7 @@
                 android:layout_marginTop="@dimen/_12sdp"
                 app:layout_constraintTop_toBottomOf="@id/label_number_batsman"
                 app:layout_constraintStart_toStartOf="parent"
-                android:text="Number of bowlers :"/>
+                android:text="@string/number_of_bowlers"/>
 
 
             <TextView
@@ -376,7 +376,7 @@
                 android:layout_marginTop="@dimen/_12sdp"
                 app:layout_constraintTop_toBottomOf="@id/label_number_bowler"
                 app:layout_constraintStart_toStartOf="parent"
-                android:text="Number of wicket keeper :"/>
+                android:text="@string/number_of_wicket_keeper"/>
 
 
             <TextView
@@ -402,7 +402,7 @@
                 android:layout_marginTop="@dimen/_12sdp"
                 app:layout_constraintTop_toBottomOf="@id/label_number_wc"
                 app:layout_constraintStart_toStartOf="parent"
-                android:text="Number of all rounder :"/>
+                android:text="@string/number_of_all_rounder"/>
 
 
             <TextView
@@ -431,7 +431,7 @@
             android:background="@drawable/bg_login_btn"
             android:backgroundTint="@color/colorHomeOption"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Join"
+            android:text="@string/join"
             android:layout_marginTop="@dimen/_10sdp"
             android:textAllCaps="false"
             android:textColor="@color/colorWhite"
