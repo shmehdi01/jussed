@@ -18,7 +18,7 @@ import com.ads.juused.utility.trimText
 import solo.android.ui.base.BaseViewModel
 
 
-class OtpFragment :  BaseFragment<BaseViewModel, FragmentOtpBinding>() {
+class OtpFragment : BaseFragment<BaseViewModel, FragmentOtpBinding>() {
 
     private lateinit var navController: NavController
 
@@ -36,36 +36,52 @@ class OtpFragment :  BaseFragment<BaseViewModel, FragmentOtpBinding>() {
     override fun getViewBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
-    ): FragmentOtpBinding = FragmentOtpBinding.inflate(inflater,container,false)
+    ): FragmentOtpBinding = FragmentOtpBinding.inflate(inflater, container, false)
 
     override fun enableBackPress(): Boolean = true
+
+    override fun validate(showToast: Boolean, call: () -> Unit): Boolean = when {
+        getOtp().length != 4 -> false
+        else -> {
+            call.invoke()
+            true
+        }
+    }
+
 
     private fun init() {
         binding.btnContinue.disableView(
             disable = true,
-            disableColor = ContextCompat.getColor(requireContext(),R.color.colorGreyDark),
-            enableColor = ContextCompat.getColor(requireContext(),R.color.colorRedAccent)
+            disableColor = ContextCompat.getColor(requireContext(), R.color.colorGreyDark),
+            enableColor = ContextCompat.getColor(requireContext(), R.color.colorRedAccent)
         )
 
         binding.etOtp1.setOtpTextChange(prevOtpField = null, nextOtpField = binding.etOtp2)
-        binding.etOtp2.setOtpTextChange(prevOtpField = binding.etOtp1,nextOtpField =  binding.etOtp3)
-        binding.etOtp3.setOtpTextChange(prevOtpField = binding.etOtp2,nextOtpField =  binding.etOtp4)
-        binding.etOtp4.setOtpTextChange(prevOtpField = binding.etOtp3,nextOtpField =  null)
+        binding.etOtp2.setOtpTextChange(
+            prevOtpField = binding.etOtp1,
+            nextOtpField = binding.etOtp3
+        )
+        binding.etOtp3.setOtpTextChange(
+            prevOtpField = binding.etOtp2,
+            nextOtpField = binding.etOtp4
+        )
+        binding.etOtp4.setOtpTextChange(prevOtpField = binding.etOtp3, nextOtpField = null)
 
     }
 
     private fun bindClicks() {
         binding.btnContinue.setOnClickListener {
-            navController.navigate(R.id.action_otpFragment_to_registerFragment)
+            validate {
+                navController.navigate(R.id.action_otpFragment_to_registerFragment)
+            }
         }
     }
 
     private fun getOtp() =
         binding.etOtp1.trimText() +
-                binding.etOtp1.trimText() +
-                binding.etOtp1.trimText() +
-                binding.etOtp1.trimText()
-
+                binding.etOtp2.trimText() +
+                binding.etOtp3.trimText() +
+                binding.etOtp4.trimText()
 
 
     private fun EditText.setOtpTextChange(nextOtpField: EditText?, prevOtpField: EditText?) {
@@ -80,23 +96,23 @@ class OtpFragment :  BaseFragment<BaseViewModel, FragmentOtpBinding>() {
         }
 
 
-        if(prevOtpField != null) {
+        if (prevOtpField != null) {
             isEnabled = false
         }
 
         this.doAfterTextChanged {
 
             if (text.toString().isNotEmpty()) {
-                    nextOtpField?.isEnabled = true
-                    prevOtpField?.isEnabled = false
-                    nextOtpField?.requestFocus()
-                    nextOtpField?.setText("")
+                nextOtpField?.isEnabled = true
+                prevOtpField?.isEnabled = false
+                nextOtpField?.requestFocus()
+                nextOtpField?.setText("")
 
             }
             binding.btnContinue.disableView(
-                disable = getOtp().isEmpty(),
-                disableColor = ContextCompat.getColor(requireContext(),R.color.colorGreyDark),
-                enableColor = ContextCompat.getColor(requireContext(),R.color.colorRedAccent)
+                disable = getOtp().length != 4,
+                disableColor = ContextCompat.getColor(requireContext(), R.color.colorGreyDark),
+                enableColor = ContextCompat.getColor(requireContext(), R.color.colorRedAccent)
             )
         }
     }

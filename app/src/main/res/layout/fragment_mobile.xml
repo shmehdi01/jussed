@@ -65,47 +65,62 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.3" />
+            app:layout_constraintGuide_percent="0.28" />
 
 
-        <LinearLayout
-            android:id="@+id/ll_mobile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_mobile"
+            android:layout_width="0dp"
             android:layout_marginEnd="@dimen/_25sdp"
             android:layout_marginStart="@dimen/_25sdp"
-            android:background="@drawable/bg_cyan_rounder"
             app:layout_constraintTop_toBottomOf="@id/guide"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_height="wrap_content"
+            app:hintEnabled="false"
+            app:hintTextColor="@color/colorCyanAccent_25">
 
-            <TextView
-                android:id="@+id/tv_cc"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:padding="@dimen/_12sdp"
-                android:layout_marginStart="@dimen/_50sdp"
-                android:fontFamily="@font/montserrat_regular"
-                android:text="+1"
-                android:textSize="@dimen/_14ssp"
-                android:textColor="@color/colorWhite" />
+            <LinearLayout
+                android:id="@+id/ll_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_cyan_rounder"
+                app:layout_constraintTop_toBottomOf="@id/guide"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
-            <EditText
-                android:id="@+id/et_mobile"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_40sdp"
-                android:layout_weight="1"
-                android:background="@null"
-                android:fontFamily="@font/montserrat_regular"
-                android:textColor="@color/colorWhite"
-                android:hint="@string/mobile_number"
-                android:maxLength="10"
-                android:inputType="phone"
-                android:textColorHint="@color/colorWhite_10" />
+                <TextView
+                    android:id="@+id/tv_cc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/_12sdp"
+                    android:layout_marginStart="@dimen/_50sdp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="+1"
+                    android:textSize="@dimen/_14ssp"
+                    android:textColor="@color/colorWhite" />
 
-        </LinearLayout>
+                <EditText
+                    android:id="@+id/et_mobile"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textColor="@color/colorWhite"
+                    android:hint="@string/mobile_number"
+                    android:maxLength="10"
+                    android:inputType="phone"
+                    android:textColorHint="@color/colorWhite_10" />
+
+            </LinearLayout>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
 
         <TextView
             android:id="@+id/tv_already_account"
@@ -115,7 +130,7 @@
             android:textAlignment="center"
             android:visibility="visible"
             android:layout_marginTop="@dimen/_10sdp"
-            app:layout_constraintTop_toBottomOf="@+id/ll_mobile"
+            app:layout_constraintTop_toBottomOf="@+id/tl_mobile"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:textColor="@color/colorCyanAccent"

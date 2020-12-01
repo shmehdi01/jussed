@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_home_nav"
+    app:startDestination="@id/teamLeagueFragment">
+
+    <fragment
+        android:id="@+id/teamLeagueFragment"
+        android:name="com.ads.juused.ui.team.fragments.TeamLeagueFragment"
+        android:label="fragment_team_league"
+        tools:layout="@layout/fragment_team_league" >
+        <action
+            android:id="@+id/action_teamLeagueFragment_to_teamContestFragment"
+            app:destination="@id/teamContestFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/teamContestFragment"
+        android:name="com.ads.juused.ui.team.fragments.TeamContestFragment"
+        android:label="fragment_team_contests"
+        tools:layout="@layout/fragment_team_contests" />
+
+</navigation>

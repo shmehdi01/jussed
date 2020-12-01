@@ -12,6 +12,8 @@ import com.ads.juused.R
 import com.ads.juused.base.BaseFragment
 import com.ads.juused.databinding.FragmentEmailBinding
 import com.ads.juused.utility.disableView
+import com.ads.juused.utility.isEmail
+import com.ads.juused.utility.trimText
 import solo.android.ui.base.BaseViewModel
 
 
@@ -37,15 +39,39 @@ class EmailFragment :  BaseFragment<BaseViewModel, FragmentEmailBinding>() {
 
     override fun enableBackPress(): Boolean = true
 
+    override fun validate(showToast: Boolean, call: () -> Unit): Boolean {
+        val message: String
+        var validated = true
+        binding.tlEmail.error = null
+
+        when {
+            binding.etEmail.trimText().isEmpty() -> {
+                message = getString(R.string.email_is_empty)
+                validated = false
+                binding.tlEmail.error = message
+                binding.etEmail.requestFocus()
+            }
+
+            !binding.etEmail.trimText().isEmail() -> {
+                message = getString(R.string.email_is_not_valid)
+                validated = false
+                binding.tlEmail.error = message
+                binding.etEmail.requestFocus()
+            }
+        }
+
+        if(validated) {
+            call.invoke()
+        }
+
+        return validated
+    }
+
     private fun init() {
-        binding.btnContinue.disableView(
-            disable = true,
-            disableColor = ContextCompat.getColor(requireContext(),R.color.colorGreyDark),
-            enableColor = ContextCompat.getColor(requireContext(),R.color.colorRedAccent)
-        )
+        binding.btnContinue.isClickable = false
 
         binding.etEmail.doAfterTextChanged {
-            val isEmpty = it?.toString()?.isEmpty()  == true
+            val isEmpty = it?.toString()?.trim()?.isEmpty()  == true
 
             binding.btnContinue.disableView(
                 disable = isEmpty,
@@ -57,7 +83,9 @@ class EmailFragment :  BaseFragment<BaseViewModel, FragmentEmailBinding>() {
     
     private fun bindClicks() {
         binding.btnContinue.setOnClickListener {
-            navController.navigate(R.id.action_emailFragment_to_mobileFragment)
+            validate {
+                navController.navigate(R.id.action_emailFragment_to_mobileFragment)
+            }
         }
     }
 }

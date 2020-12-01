@@ -7,6 +7,7 @@ import android.content.Context.CLIPBOARD_SERVICE
 import android.content.pm.PackageManager
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.graphics.Typeface
 import android.net.Uri
 import android.provider.Settings
 import android.text.Editable
@@ -434,3 +435,42 @@ fun View.disableView(disable: Boolean) {
 }
 
 fun EditText.trimText() = text.toString().trim()
+
+fun EditText.clearText() = this.setText("")
+
+fun Activity.startNewActivity(clazz: Class<*>) = startActivity(Intent(this, clazz).also {
+    it.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
+    it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+})
+
+fun Fragment.startNewActivity(clazz: Class<*>) = activity!!.startNewActivity(clazz)
+
+fun Boolean.toInt() = if(this) 1 else 0
+
+fun Int.toBoolean() = this > 0
+
+fun String.isEmail() = this.matches(Regex("[a-zA-Z0-9._-]+@[a-z]+\\.[a-z]+"))
+
+fun String.isMobileNumber() = this.matches(Regex("^[7-9][0-9]{9}\$"))
+
+fun String.isFullName() = this.matches(Regex("^[\\\\p{L} .'-]+\$"))
+
+fun EditText.setNonNullText(text: String?) {
+    text?.let { this.setText(it) }
+}
+
+fun TextView.normal() {
+    setTypeface(typeface, Typeface.NORMAL)
+}
+
+fun TextView.bold() {
+    setTypeface(typeface, Typeface.BOLD)
+}
+
+fun TextView.italic() {
+    setTypeface(typeface, Typeface.ITALIC)
+}
+
+fun TextView.boldItalic() {
+    setTypeface(typeface, Typeface.BOLD_ITALIC)
+}

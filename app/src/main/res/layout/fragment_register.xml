@@ -75,6 +75,7 @@
                 android:background="@drawable/bg_circle_outline">
 
                 <ImageView
+                    android:id="@+id/iv_user"
                     android:layout_width="@dimen/_60sdp"
                     android:layout_height="@dimen/_60sdp"
                     android:layout_gravity="center"
@@ -84,6 +85,7 @@
             </FrameLayout>
 
             <ImageView
+                android:id="@+id/iv_image_pick"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
@@ -94,65 +96,101 @@
         </FrameLayout>
 
 
-
-        <EditText
-            android:id="@+id/et_first_name"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_first_name"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
-            android:fontFamily="@font/montserrat_regular"
-            android:textColor="@color/colorWhite"
-            android:hint="@string/first_name"
+            android:layout_height="wrap_content"
+            android:hint="@string/email_address"
+            app:hintEnabled="false"
             android:layout_marginTop="@dimen/_14sdp"
-            android:inputType="textCapWords"
-            android:textAlignment="center"
-            android:singleLine="true"
             android:layout_marginEnd="@dimen/_40sdp"
             android:layout_marginStart="@dimen/_40sdp"
-            android:background="@drawable/bg_cyan_rounder"
-            android:textColorHint="@color/colorWhite_10"
+            app:hintTextColor="@color/colorCyanAccent_25"
             app:layout_constraintTop_toBottomOf="@id/fl_avatar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent">
 
-        <EditText
-            android:id="@+id/et_last_name"
+            <EditText
+                android:id="@+id/et_first_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/colorWhite"
+                android:hint="@string/first_name"
+                android:inputType="textCapWords"
+                android:textAlignment="center"
+                android:singleLine="true"
+                android:background="@drawable/bg_cyan_rounder"
+                android:textColorHint="@color/colorWhite_10" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_last_name"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
-            android:fontFamily="@font/montserrat_regular"
-            android:textColor="@color/colorWhite"
-            android:hint="@string/last_name"
-            android:singleLine="true"
-            android:inputType="textCapWords"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:textAlignment="center"
-            android:layout_marginEnd="@dimen/_40sdp"
-            android:layout_marginStart="@dimen/_40sdp"
-            android:background="@drawable/bg_cyan_rounder"
-            android:textColorHint="@color/colorWhite_10"
-            app:layout_constraintTop_toBottomOf="@id/et_first_name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
-
-
-        <EditText
-            android:id="@+id/et_username"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
-            android:fontFamily="@font/montserrat_regular"
-            android:textColor="@color/colorWhite"
-            android:hint="@string/user_name"
-            android:inputType="text"
-            android:singleLine="true"
-            android:imeOptions="actionDone"
-            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:hint="@string/email_address"
+            app:hintEnabled="false"
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_40sdp"
             android:layout_marginStart="@dimen/_40sdp"
-            android:background="@drawable/bg_cyan_rounder"
-            android:textColorHint="@color/colorWhite_10"
-            app:layout_constraintTop_toBottomOf="@id/et_last_name"
+            app:hintTextColor="@color/colorCyanAccent_25"
+            app:layout_constraintTop_toBottomOf="@id/tl_first_name"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent">
+
+            <EditText
+                android:id="@+id/et_last_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/colorWhite"
+                android:hint="@string/last_name"
+                android:singleLine="true"
+                android:inputType="textCapWords"
+                android:textAlignment="center"
+                android:background="@drawable/bg_cyan_rounder"
+                android:textColorHint="@color/colorWhite_10" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_user_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/email_address"
+            app:hintEnabled="false"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_40sdp"
+            app:hintTextColor="@color/colorCyanAccent_25"
+            app:layout_constraintTop_toBottomOf="@id/tl_last_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <EditText
+                android:id="@+id/et_username"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/colorWhite"
+                android:hint="@string/user_name"
+                android:inputType="text"
+                android:singleLine="true"
+                android:imeOptions="actionDone"
+                android:textAlignment="center"
+                android:background="@drawable/bg_cyan_rounder"
+                android:textColorHint="@color/colorWhite_10" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
 
         <Button
             android:id="@+id/btn_continue"

@@ -5,12 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.transition.ChangeBounds
 import androidx.viewbinding.ViewBinding
 import com.ads.juused.R
+import com.ads.juused.utility.invisible
 
 abstract class BaseFragment<VM:ViewModel,B:ViewBinding>: Fragment() {
 
@@ -43,6 +45,16 @@ abstract class BaseFragment<VM:ViewModel,B:ViewBinding>: Fragment() {
     abstract fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?) : B
 
     //abstract fun getViewModelFactory(): ViewModelProviderFactory
+
+    fun setToolbar(title: String, enableBack: Boolean = true) {
+        view?.findViewById<TextView>(R.id.tv_title)?.let { it.text = title }
+        view?.findViewById<ImageView>(R.id.iv_back)?.let {
+            if (enableBack) {
+               it.setOnClickListener { requireActivity().onBackPressed() }
+            }
+            else it.invisible()
+        }
+    }
 
     open fun enableBackPress(): Boolean {
         return false
