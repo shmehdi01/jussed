@@ -236,7 +236,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
-            android:id="@+id/btn_participate"
+            android:id="@+id/btn_put_wager"
             android:layout_width="0dp"
             android:layout_height="@dimen/_42sdp"
             android:layout_marginStart="@dimen/_20sdp"
@@ -249,7 +249,7 @@
             android:layout_marginTop="@dimen/_8sdp"
             android:textAllCaps="false"
             android:textColor="@color/colorWhite"
-            android:textSize="@dimen/_11ssp"
+            android:textSize="@dimen/_10ssp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

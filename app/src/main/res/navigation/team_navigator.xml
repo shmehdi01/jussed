@@ -52,11 +52,15 @@
         tools:layout="@layout/fragment_wager" >
         <action
             android:id="@+id/action_wagerFragment_to_confrimWagerFragment"
-            app:destination="@id/confrimWagerFragment" />
+            app:destination="@id/confrimWagerFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/confrimWagerFragment"
-        android:name="com.ads.juused.ui.team.fragments.ConfrimWagerFragment"
+        android:name="com.ads.juused.ui.team.fragments.ConfirmWagerFragment"
         android:label="fragment_confrim_wager"
         tools:layout="@layout/fragment_confrim_wager" />
 

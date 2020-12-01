@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ads.juused.R
 import com.ads.juused.base.BaseFragment
@@ -15,8 +17,12 @@ import solo.android.ui.base.BaseViewModel
 
 class WagerFragment: BaseFragment<BaseViewModel, FragmentWagerBinding>() {
 
+    private lateinit var navController: NavController
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        navController = Navigation.findNavController(view)
 
         setToolbar(title = getString(R.string.wager), tailIcon = R.drawable.ic_help)
         setUpRecycler()
@@ -47,7 +53,9 @@ class WagerFragment: BaseFragment<BaseViewModel, FragmentWagerBinding>() {
     }
 
     private fun bindClicks() {
-
+        binding.btnPutWager.setOnClickListener {
+            navController.navigate(R.id.action_wagerFragment_to_confrimWagerFragment)
+        }
     }
 
 }
