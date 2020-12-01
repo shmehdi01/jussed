@@ -56,4 +56,20 @@
     <string name="wager">Wager</string>
     <string name="camera">Camera</string>
     <string name="gallery">Gallery</string>
+    <string name="participate">Participate</string>
+    <string name="bowlers_team">Bowlers Team</string>
+    <string name="batsman_team">Batsman Team</string>
+    <string name="p_pic">P Pic</string>
+    <string name="name">Name</string>
+    <string name="op_team">Op.Team</string>
+    <string name="ppg">PPG</string>
+    <string name="opp_rank">Opp. Rank</string>
+    <string name="currently_matchable">Currently Matchable</string>
+    <string name="not_currently_matchable">Not Currently Matchable</string>
+    <string name="enter_a_custom_amount">Enter a Custom Amount</string>
+    <string name="pick_wager_size">Pick Wager Size</string>
+    <string name="put_wager">Put Wager</string>
+    <string name="risk">Risk</string>
+    <string name="to_win">To Win</string>
+    <string name="confirm_game">Confirm Game</string>
 </resources>
