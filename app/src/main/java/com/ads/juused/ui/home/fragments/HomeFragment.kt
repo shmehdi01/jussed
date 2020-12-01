@@ -12,6 +12,7 @@ import androidx.core.content.ContextCompat
 import com.ads.juused.R
 import com.ads.juused.base.BaseFragment
 import com.ads.juused.databinding.FragmentHomeBinding
+import com.ads.juused.ui.jackpot.JackpotActivity
 import com.ads.juused.ui.team.TeamActivity
 import com.ads.juused.utility.setBgColorAnim
 import com.ads.juused.utility.tint
@@ -95,6 +96,10 @@ class HomeFragment : BaseFragment<BaseViewModel,FragmentHomeBinding>(), View.OnC
 
         binding.flTeam.setOnClickListener {
             startActivity(Intent(requireActivity(), TeamActivity::class.java))
+        }
+
+        binding.flJackpot.setOnClickListener {
+            startActivity(Intent(requireActivity(), JackpotActivity::class.java))
         }
     }
 

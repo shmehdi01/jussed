@@ -19,7 +19,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="n">
-
+        <activity android:name=".ui.jackpot.JackpotActivity"></activity>
         <activity android:name=".ui.team.TeamActivity" />
         <activity android:name=".ui.home.HomeActivity" />
         <activity android:name=".ui.auth.AuthActivity" />
@@ -27,11 +27,6 @@
         <activity
             android:name=".ui.splash.SplashScreen"
             android:theme="@style/SplashAppTheme" />
-
-        <activity
-            android:name="com.yalantis.ucrop.UCropActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"/>
 
         <activity-alias
             android:name=".Launcher"
@@ -43,6 +38,10 @@
             </intent-filter>
         </activity-alias>
 
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

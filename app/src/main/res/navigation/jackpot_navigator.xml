@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_home_nav"
+    app:startDestination="@id/jackpotListFragment">
+
+    <fragment
+        android:id="@+id/jackpotListFragment"
+        android:name="com.ads.juused.ui.jackpot.fragments.JackpotListFragment"
+        android:label="fragment_jackpot_list"
+        tools:layout="@layout/fragment_jackpot_list" >
+        <action
+            android:id="@+id/action_jackpotListFragment_to_jackpotDetailFragment"
+            app:destination="@id/jackpotDetailFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/jackpotDetailFragment"
+        android:name="com.ads.juused.ui.jackpot.fragments.JackpotDetailFragment"
+        android:label="fragment_jackpot_detail"
+        tools:layout="@layout/fragment_jackpot_detail" />
+
+</navigation>

@@ -11,7 +11,7 @@ import com.ads.juused.R
 import com.ads.juused.base.BaseFragment
 import com.ads.juused.databinding.FragmentWagerBinding
 import com.ads.juused.ui.team.adapter.WagerMatchableAdapter
-import com.ads.juused.utility.show
+import com.ads.juused.utility.*
 import solo.android.ui.base.BaseViewModel
 
 
@@ -29,7 +29,14 @@ class WagerFragment: BaseFragment<BaseViewModel, FragmentWagerBinding>() {
         bindClicks()
 
         binding.etAmount.setOnFocusChangeListener { _, isFocus ->
-            binding.cardNotMatchable.show(isFocus)
+            if(isFocus) {
+                binding.cardNotMatchable.visbleWithFade(duration = 700)
+                binding.cardMatchable.changeWidth(200f.toDp(requireContext()), duration = 300)
+            }
+            else {
+                binding.cardNotMatchable.goneWithFade()
+            }
+
         }
     }
 

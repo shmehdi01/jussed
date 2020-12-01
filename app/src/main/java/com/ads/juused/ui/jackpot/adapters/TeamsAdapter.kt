@@ -1,17 +1,17 @@
-package com.ads.juused.ui.team.adapter
+package com.ads.juused.ui.jackpot.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.ads.juused.databinding.ItemPlayerAvatarBinding
-import com.ads.juused.databinding.ItemWagerMatchableBinding
+import com.ads.juused.databinding.ItemJackpotBinding
+import com.ads.juused.databinding.ItemTeamVsBinding
 
-class PlayerAvatarAdapter() :
+class TeamsAdapter() :
     ListAdapter<Any, RecyclerView.ViewHolder>(diffUtil) {
 
-    inner class PlayerAvatarViewHolder(binding: ItemPlayerAvatarBinding) :
+    inner class TeamViewHolder(binding: ItemTeamVsBinding) :
         RecyclerView.ViewHolder(binding.root)
 
     companion object {
@@ -24,8 +24,8 @@ class PlayerAvatarAdapter() :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
-       PlayerAvatarViewHolder(
-           ItemPlayerAvatarBinding.inflate(
+        TeamViewHolder(
+            ItemTeamVsBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
             )
         )
@@ -35,6 +35,6 @@ class PlayerAvatarAdapter() :
     }
 
     override fun getItemCount(): Int {
-        return 7
+        return 6
     }
 }

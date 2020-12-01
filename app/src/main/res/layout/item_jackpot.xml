@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_8sdp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/_12sdp"
+    android:background="@color/colorBlackCard">
+
+
+    <TextView
+        android:id="@+id/tv_contestants"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Contestants :"
+        android:textColor="@color/colorHomeOption"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_contestants_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintStart_toEndOf="@id/tv_contestants"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/colorWhite"
+        android:fontFamily="@font/poppins_regular"
+        android:text="92680000"/>
+
+    <TextView
+        android:id="@+id/tv_spot_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Spot Left :"
+        android:layout_marginEnd="@dimen/_12ssp"
+        android:textColor="@color/colorHomeOption"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintEnd_toStartOf="@id/tv_spot_left_number"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_spot_left_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/colorCyanAccent"
+        android:fontFamily="@font/poppins_regular"
+        android:text="430"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_team"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:itemCount="4"
+        android:layout_marginTop="@dimen/_8sdp"
+        app:layout_constraintTop_toBottomOf="@id/tv_spot_left_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <View
+        android:id="@+id/iv_divider"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="@dimen/_8sdp"
+        app:layout_constraintTop_toBottomOf="@id/rcv_team"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/colorRedAccent"
+        />
+
+    <TextView
+        android:id="@+id/tv_jackpot_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_16sdp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/iv_divider"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/colorGreyLight"
+        android:fontFamily="@font/poppins_bold"
+        android:text="IPL Week 3 Jackpot"/>
+
+    <TextView
+        android:id="@+id/tv_win_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_16sdp"
+        app:layout_constraintTop_toBottomOf="@id/tv_jackpot_name"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/colorCyanAccent"
+        android:fontFamily="@font/poppins_bold"
+        android:text="$5,000.00"/>
+
+    <TextView
+        android:id="@+id/tv_chance_to_win"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_9sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:layout_constraintStart_toEndOf="@id/tv_win_amount"
+        app:layout_constraintTop_toBottomOf="@id/tv_jackpot_name"
+        android:textColor="@color/colorWhite"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Chance to win"/>
+
+    <View
+        android:id="@+id/iv_divider_vert"
+        android:layout_width="@dimen/_2sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_divider"
+        app:layout_constraintStart_toEndOf="@id/tv_jackpot_name"
+        android:background="@color/colorRedAccent"
+        />
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        app:layout_constraintStart_toEndOf="@id/iv_divider_vert"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/colorRedAccent"
+        android:fontFamily="@font/poppins_bold"
+        android:text="$0.30"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
