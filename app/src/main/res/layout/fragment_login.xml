@@ -54,7 +54,10 @@
         <ImageView
             android:id="@+id/iv_login_image"
             android:layout_width="@dimen/_200sdp"
-            android:layout_height="@dimen/_220sdp"
+            android:layout_height="@dimen/_240sdp"
+            android:src="@drawable/login_image"
+            android:scaleType="fitEnd"
+            android:layout_marginEnd="@dimen/_20sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

@@ -25,6 +25,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_12sdp"
         app:layout_constraintStart_toEndOf="@id/tv_contestants"
         app:layout_constraintTop_toTopOf="parent"
         android:textColor="@color/colorWhite"

@@ -22,6 +22,15 @@
         android:id="@+id/jackpotDetailFragment"
         android:name="com.ads.juused.ui.jackpot.fragments.JackpotDetailFragment"
         android:label="fragment_jackpot_detail"
-        tools:layout="@layout/fragment_jackpot_detail" />
+        tools:layout="@layout/fragment_jackpot_detail" >
+        <action
+            android:id="@+id/action_jackpotDetailFragment_to_playerSelectionFragment"
+            app:destination="@id/playerSelectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playerSelectionFragment"
+        android:name="com.ads.juused.ui.jackpot.fragments.PlayerSelectionFragment"
+        android:label="fragment_player_selection"
+        tools:layout="@layout/fragment_player_selection" />
 
 </navigation>
