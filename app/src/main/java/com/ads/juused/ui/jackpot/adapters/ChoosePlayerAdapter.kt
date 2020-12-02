@@ -39,19 +39,6 @@ class ChoosePlayerAdapter() :
 
     override fun onBindViewHolder(holder: ChoosePlayerViewHolder, position: Int) {
 
-        val rainbow = GradientDrawable(
-            GradientDrawable.Orientation.LEFT_RIGHT,
-            intArrayOf(
-                Color.RED,
-                Color.MAGENTA,
-                Color.BLUE,
-                Color.CYAN,
-                Color.GREEN,
-                Color.YELLOW,
-                Color.RED
-            )
-        )
-
         holder.binding.tvPphRankNum.text = "${dummyProgress[position]}"
         holder.binding.tvOppPphRankNum.text = "${dummyProgress2[position]}"
 

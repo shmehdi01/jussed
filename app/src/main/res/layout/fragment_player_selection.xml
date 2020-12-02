@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_8sdp"
             android:fontFamily="@font/poppins_regular"
-            android:text="Max 20 players from a team"
+            android:text="@string/max_20_players_from_a_team"
             android:textColor="@color/colorHomeOption"
             android:textSize="@dimen/_8ssp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +45,7 @@
             android:layout_marginStart="@dimen/_16sdp"
             android:layout_marginTop="@dimen/_16sdp"
             android:fontFamily="@font/poppins_regular"
-            android:text="Players"
+            android:text="@string/players"
             android:textColor="@color/colorHomeOption"
             android:textSize="@dimen/_9ssp"
             app:layout_constraintStart_toStartOf="parent"
@@ -97,7 +97,7 @@
             android:layout_marginTop="@dimen/_16sdp"
             android:layout_marginEnd="@dimen/_16sdp"
             android:fontFamily="@font/poppins_regular"
-            android:text="Credits Left"
+            android:text="@string/credits_left"
             android:textColor="@color/colorHomeOption"
             android:textSize="@dimen/_9ssp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -181,7 +181,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:fontFamily="@font/poppins_regular"
-                    android:text="WK (0)"
+                    android:text="@string/wk"
                     android:textColor="@color/colorRedAccent"
                     android:textSize="@dimen/_9ssp" />
 
@@ -212,7 +212,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:fontFamily="@font/poppins_regular"
-                    android:text="BAT (0)"
+                    android:text="@string/bat"
                     android:textColor="@color/colorHomeOption"
                     android:textSize="@dimen/_9ssp" />
 
@@ -242,7 +242,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:fontFamily="@font/poppins_regular"
-                    android:text="AR (0)"
+                    android:text="@string/ar"
                     android:textColor="@color/colorHomeOption"
                     android:textSize="@dimen/_9ssp" />
 
@@ -273,7 +273,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:fontFamily="@font/poppins_regular"
-                    android:text="BOWL (0)"
+                    android:text="@string/bowl"
                     android:textColor="@color/colorHomeOption"
                     android:textSize="@dimen/_9ssp" />
 
@@ -303,7 +303,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:fontFamily="@font/poppins_regular"
-                    android:text="FLEX (0)"
+                    android:text="@string/flex"
                     android:textColor="@color/colorHomeOption"
                     android:textSize="@dimen/_9ssp" />
 
@@ -333,7 +333,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:fontFamily="@font/poppins_regular"
-                    android:text="Uber Flex(0)"
+                    android:text="@string/uber_flex"
                     android:textColor="@color/colorHomeOption"
                     android:textSize="@dimen/_9ssp" />
 
@@ -350,7 +350,7 @@
         android:layout_marginTop="@dimen/_8sdp"
         android:layout_marginEnd="@dimen/_12sdp"
         android:fontFamily="@font/poppins_regular"
-        android:text="Select 1 - 3 Wicket Keeper"
+        android:text="@string/select_1_3_wicket_keeper"
         android:textColor="@color/colorHomeOption"
         android:textSize="@dimen/_8ssp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -394,7 +394,7 @@
         android:layout_marginBottom="@dimen/_10sdp"
         android:background="@drawable/bg_login_btn"
         android:fontFamily="@font/montserrat_bold"
-        android:text="Team Preview"
+        android:text="@string/team_preview"
         android:textAllCaps="false"
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/_10ssp"
