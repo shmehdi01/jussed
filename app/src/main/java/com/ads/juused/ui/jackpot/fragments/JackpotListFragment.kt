@@ -1,4 +1,4 @@
-package com.ads.juused.ui.team.fragments
+package com.ads.juused.ui.jackpot.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,23 +10,20 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ads.juused.R
 import com.ads.juused.base.BaseFragment
-import com.ads.juused.databinding.FragmentTeamContestsBinding
-import com.ads.juused.databinding.FragmentTeamLeagueBinding
-import com.ads.juused.ui.team.adapter.TeamContestAdapter
-import com.ads.juused.ui.team.adapter.TeamLeagueAdapter
+import com.ads.juused.databinding.FragmentJackpotDetailBinding
+import com.ads.juused.databinding.FragmentJackpotListBinding
+import com.ads.juused.ui.jackpot.adapters.JackpotAdapter
 import solo.android.ui.base.BaseViewModel
 
-
-class TeamContestFragment : BaseFragment<BaseViewModel,FragmentTeamContestsBinding>() {
+class JackpotListFragment : BaseFragment<BaseViewModel, FragmentJackpotListBinding>() {
 
     private lateinit var navController: NavController
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setToolbar(title = getString(R.string.jackpot))
         navController = Navigation.findNavController(view)
-
-        setToolbar(title = getString(R.string.team_contests))
         setUpRecycler()
     }
 
@@ -35,13 +32,13 @@ class TeamContestFragment : BaseFragment<BaseViewModel,FragmentTeamContestsBindi
     override fun getViewBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
-    ): FragmentTeamContestsBinding = FragmentTeamContestsBinding.inflate(inflater,container,false)
+    ): FragmentJackpotListBinding = FragmentJackpotListBinding.inflate(inflater,container,false)
 
     private fun setUpRecycler() {
-        binding.rcvTeam.apply {
+        binding.rcvJackpot.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = TeamContestAdapter() {
-                navController.navigate(R.id.action_teamContestFragment_to_teamSelectionFragment)
+            adapter = JackpotAdapter() {
+                navController.navigate(R.id.action_jackpotListFragment_to_jackpotDetailFragment)
             }
         }
     }

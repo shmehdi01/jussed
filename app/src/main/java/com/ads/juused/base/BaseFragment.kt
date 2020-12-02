@@ -1,5 +1,6 @@
 package com.ads.juused.base
 
+import android.media.Image
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import androidx.transition.ChangeBounds
 import androidx.viewbinding.ViewBinding
 import com.ads.juused.R
 import com.ads.juused.utility.invisible
+import com.ads.juused.utility.visible
 
 abstract class BaseFragment<VM:ViewModel,B:ViewBinding>: Fragment() {
 
@@ -46,13 +48,21 @@ abstract class BaseFragment<VM:ViewModel,B:ViewBinding>: Fragment() {
 
     //abstract fun getViewModelFactory(): ViewModelProviderFactory
 
-    fun setToolbar(title: String, enableBack: Boolean = true) {
+    fun setToolbar(title: String, enableBack: Boolean = true, tailIcon: Int = -1, tailIconClick: (() -> Unit)? = null) {
         view?.findViewById<TextView>(R.id.tv_title)?.let { it.text = title }
         view?.findViewById<ImageView>(R.id.iv_back)?.let {
             if (enableBack) {
                it.setOnClickListener { requireActivity().onBackPressed() }
             }
             else it.invisible()
+        }
+
+        if (tailIcon != -1) {
+           view?.findViewById<ImageView>(R.id.iv_tail)?.let {
+               it.visible()
+               it.setImageResource(tailIcon)
+               it.setOnClickListener { tailIconClick?.invoke() }
+           }
         }
     }
 

@@ -32,6 +32,7 @@ import androidx.viewpager.widget.ViewPager
 import com.ads.juused.BuildConfig
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
+import com.rd.animation.type.ColorAnimation
 import kotlin.math.roundToInt
 
 //import io.reactivex.Observable
@@ -84,12 +85,13 @@ fun View.pulseAnimate(count: Int = 3) {
     scaleDown.start()
 }
 
-fun View.setBgColorAnim(colorFrom: Int, colorTo: Int, duration: Long = 500) {
+fun View.setBgColorAnim(colorFrom: Int, colorTo: Int, duration: Long = 500): ValueAnimator {
     val view = this
     val colorAnimation = ValueAnimator.ofObject(ArgbEvaluator(), colorFrom, colorTo)
     colorAnimation.duration = duration
     colorAnimation.addUpdateListener { animator -> view.setBackgroundColor(animator.animatedValue as Int) }
     colorAnimation.start()
+    return colorAnimation
 }
 
 fun TextView.setCount(count: Int, duration: Long = 1000) {

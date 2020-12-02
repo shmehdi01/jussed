@@ -28,4 +28,5 @@
     <color name="colorDarkText">#313131</color>
     <color name="colorGreyText">#A5A5A5</color>
     <color name="colorHomeOption">#707171</color>
+    <color name="colorGreyLightButton">#24292B</color>
 </resources>

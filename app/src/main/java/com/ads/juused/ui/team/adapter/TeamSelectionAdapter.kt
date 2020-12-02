@@ -5,12 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.ads.juused.databinding.ItemPlayerBinding
 import com.ads.juused.databinding.ItemTeamContestBinding
 import com.ads.juused.databinding.ItemTeamLeagueBinding
 
-class TeamContestAdapter(private val itemClick: () -> Unit): ListAdapter<Any, TeamContestAdapter.TeamContestViewHolder>(diffUtil) {
+class TeamSelectionAdapter(): ListAdapter<Any, TeamSelectionAdapter.TeamSelectionViewHolder>(diffUtil) {
 
-    inner class TeamContestViewHolder(binding: ItemTeamContestBinding): RecyclerView.ViewHolder(binding.root)
+    inner class TeamSelectionViewHolder(binding: ItemPlayerBinding): RecyclerView.ViewHolder(binding.root)
 
     companion object {
 
@@ -21,16 +22,13 @@ class TeamContestAdapter(private val itemClick: () -> Unit): ListAdapter<Any, Te
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TeamContestViewHolder =
-        TeamContestViewHolder(ItemTeamContestBinding.inflate(LayoutInflater.from(parent.context), parent,false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TeamSelectionViewHolder =
+        TeamSelectionViewHolder(ItemPlayerBinding.inflate(LayoutInflater.from(parent.context), parent,false))
 
-    override fun onBindViewHolder(holder: TeamContestViewHolder, position: Int) {
-        holder.itemView.setOnClickListener {
-            itemClick()
-        }
+    override fun onBindViewHolder(holder: TeamSelectionViewHolder, position: Int) {
     }
 
     override fun getItemCount(): Int {
-        return 5
+        return 8
     }
 }

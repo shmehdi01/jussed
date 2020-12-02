@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_12sdp"
+    android:background="@color/colorBlackCard"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_player"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        app:layout_constraintEnd_toStartOf="@id/tv_player_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/tv_player_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_10ssp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintEnd_toStartOf="@id/tv_team_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_player"
+        android:fontFamily="@font/poppins_regular"
+        android:text="MS Dhoni"/>
+
+    <TextView
+        android:id="@+id/tv_team_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_10ssp"
+        android:background="@drawable/bg_rounded_team"
+        android:backgroundTint="#FFCA11"
+        android:paddingStart="@dimen/_2sdp"
+        android:paddingEnd="@dimen/_2sdp"
+        app:layout_constraintEnd_toStartOf="@id/tv_ops_team_name"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_player_name"
+        android:fontFamily="@font/poppins_regular"
+        android:text="CSK"/>
+
+    <TextView
+        android:id="@+id/tv_ops_team_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_10ssp"
+        android:backgroundTint="#B16DFF"
+        android:background="@drawable/bg_rounded_team"
+        app:layout_constraintEnd_toStartOf="@id/tv_ppg"
+        android:paddingStart="@dimen/_2sdp"
+        android:paddingEnd="@dimen/_2sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_team_name"
+        android:fontFamily="@font/poppins_regular"
+        android:text="KKR"/>
+
+    <TextView
+        android:id="@+id/tv_ppg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_10ssp"
+        android:paddingStart="@dimen/_2sdp"
+        app:layout_constraintEnd_toStartOf="@id/tv_opp_rank"
+        android:paddingEnd="@dimen/_2sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_ops_team_name"
+        android:fontFamily="@font/poppins_regular"
+        android:text="100.0"/>
+
+    <TextView
+        android:id="@+id/tv_opp_rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_10ssp"
+        android:paddingStart="@dimen/_2sdp"
+        android:paddingEnd="@dimen/_2sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_ppg"
+        android:fontFamily="@font/poppins_regular"
+        android:text="100.0"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

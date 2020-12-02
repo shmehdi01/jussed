@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlack"
+    tools:context=".ui.team.fragments.TeamSelectionFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBlackCard"
+        android:paddingBottom="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/layout_toolbar"
+            layout="@layout/layout_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_team_logo"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginTop="16dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintEnd_toStartOf="@id/tv_bowlers_vs_batsman"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_toolbar" />
+
+        <TextView
+            android:id="@+id/tv_bowlers_vs_batsman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Bowlers VS Batsman"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/iv_team_logo"
+            app:layout_constraintTop_toBottomOf="@id/layout_toolbar" />
+
+        <TextView
+            android:id="@+id/tv_team_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="KKR"
+            android:textColor="@color/colorGreyText"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toEndOf="@id/iv_team_logo"
+            app:layout_constraintStart_toStartOf="@id/iv_team_logo"
+            app:layout_constraintTop_toBottomOf="@id/iv_team_logo" />c
+
+        <TextView
+            android:id="@+id/tv_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="2d 12h 35m 12s left"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_bowlers_vs_batsman" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:background="@color/colorBlackCard"
+        android:orientation="horizontal"
+        android:padding="@dimen/_18sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_header">
+
+        <LinearLayout
+            android:id="@+id/ll_bowlers_team"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="1dp"
+            android:layout_weight="1"
+            android:background="@color/colorRedAccent"
+            android:paddingStart="@dimen/_3sdp">
+
+            <TextView
+                android:id="@+id/tv_bowlers_team"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/color_animation"
+                android:fontFamily="@font/poppins_regular"
+                android:padding="@dimen/_8sdp"
+                android:text="@string/bowlers_team"
+                android:textAlignment="center"
+                android:textColor="@color/colorGreyText"
+                android:textSize="@dimen/_11ssp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_batsman_team"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_weight="1"
+            android:background="@color/colorCyanAccent"
+            android:paddingEnd="@dimen/_3sdp">
+
+            <TextView
+                android:id="@+id/tv_batsman_team"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorGreyLightButton"
+                android:fontFamily="@font/poppins_regular"
+                android:padding="@dimen/_8sdp"
+                android:text="@string/batsman_team"
+                android:textAlignment="center"
+                android:textColor="@color/colorGreyText"
+                android:textSize="@dimen/_11ssp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/label_p_pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/p_pic"
+        android:textColor="@color/colorGreyText"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintEnd_toStartOf="@id/label_name"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_1" />
+
+    <TextView
+        android:id="@+id/label_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_22sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/name"
+        android:textColor="@color/colorGreyText"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintEnd_toStartOf="@id/label_team"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/label_p_pic"
+        app:layout_constraintTop_toBottomOf="@id/ll_1" />
+
+    <TextView
+        android:id="@+id/label_team"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_22sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/team"
+        android:textColor="@color/colorGreyText"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintEnd_toStartOf="@id/label_opt_team"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/label_name"
+        app:layout_constraintTop_toBottomOf="@id/ll_1" />
+
+    <TextView
+        android:id="@+id/label_opt_team"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/op_team"
+        android:textColor="@color/colorGreyText"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintEnd_toStartOf="@id/label_ppg"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/label_team"
+        app:layout_constraintTop_toBottomOf="@id/ll_1" />
+
+    <TextView
+        android:id="@+id/label_ppg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/ppg"
+        android:textColor="@color/colorGreyText"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintEnd_toStartOf="@id/label_opt_rank"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/label_opt_team"
+        app:layout_constraintTop_toBottomOf="@id/ll_1" />
+
+    <TextView
+        android:id="@+id/label_opt_rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/opp_rank"
+        android:textColor="@color/colorGreyText"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/label_ppg"
+        app:layout_constraintTop_toBottomOf="@id/ll_1" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_players"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_18sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_18sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_name"
+        tools:listitem="@layout/item_player" />
+
+    <Button
+        android:id="@+id/btn_participate"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_42sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/bg_login_btn"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/participate"
+        android:textAllCaps="false"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        app:layout_constraintEnd_toStartOf="@id/fab_msg"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintStart_toEndOf="@id/btn_participate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:src="@drawable/ic_msg"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
