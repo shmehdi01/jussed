@@ -1,9 +1,13 @@
 package com.ads.juused.ui.auth.login
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.TranslateAnimation
 import android.widget.TextView
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -30,6 +34,7 @@ class LoginFragment : BaseFragment<BaseViewModel,FragmentLoginBinding>() {
 
         navController = Navigation.findNavController(view)
         bindClicks()
+        startAnim()
     }
 
     override fun getViewModel(): Class<BaseViewModel> = BaseViewModel::class.java
@@ -110,6 +115,23 @@ class LoginFragment : BaseFragment<BaseViewModel,FragmentLoginBinding>() {
 
             startNewActivity(HomeActivity::class.java)
         }
+    }
+
+    private fun startAnim() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            binding.ivLoginImage.visibility = View.VISIBLE
+            val animate = TranslateAnimation(
+                0f,  // fromXDelta
+                (binding.ivLoginImage.width.toFloat())/100*15,  // toXDelta
+                0f,  // fromYDelta
+                0f
+            ) // toYDelta
+
+            animate.duration = 300
+            animate.fillAfter = true
+            binding.ivLoginImage.startAnimation(animate)
+
+        }, 10)
     }
 
 

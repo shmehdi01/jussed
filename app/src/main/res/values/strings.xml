@@ -86,4 +86,18 @@
     <string name="payout">Payout</string>
     <string name="be_the_first_in_your_network_to_join_this_contest">Be the first in your network to join this contest.</string>
     <string name="join">Join</string>
+    <string name="wk">WK (0)</string>
+    <string name="bat">BAT (0)</string>
+    <string name="ar">AR (0)</string>
+    <string name="bowl">BOWL (0)</string>
+    <string name="flex">FLEX (0)</string>
+    <string name="uber_flex">Uber Flex(0)</string>
+    <string name="select_1_3_wicket_keeper">Select 1 – 3 Wicket Keeper</string>
+    <string name="team_preview">Team Preview</string>
+    <string name="credits_left">Credits Left</string>
+    <string name="players">Players</string>
+    <string name="max_20_players_from_a_team">Max 20 players from a team</string>
+    <string name="vs">Vs</string>
+    <string name="pph_rank">PPH Rank</string>
+    <string name="opp_pph_rank">Opp. PPH Rank</string>
 </resources>

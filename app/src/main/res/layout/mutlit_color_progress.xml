@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    tools:background="@color/colorBlack"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/v1"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_18sdp"
+        android:layout_weight="1"
+        android:background="@drawable/parallelogram_shape"/>
+
+    <View
+        android:id="@+id/v2"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_18sdp"
+        android:layout_weight="1"
+        android:background="@drawable/parallelogram_shape"/>
+
+    <View
+        android:id="@+id/v3"
+        android:layout_width="00dp"
+        android:layout_height="@dimen/_18sdp"
+        android:layout_weight="1"
+        android:background="@drawable/parallelogram_shape"/>
+
+    <View
+        android:id="@+id/v4"
+        android:layout_width="00dp"
+        android:layout_height="@dimen/_18sdp"
+        android:layout_weight="1"
+        android:background="@drawable/parallelogram_shape"/>
+
+    <View
+        android:id="@+id/v5"
+        android:layout_width="00dp"
+        android:layout_height="@dimen/_18sdp"
+        android:layout_weight="1"
+        android:background="@drawable/parallelogram_shape"/>
+
+    <View
+        android:id="@+id/v6"
+        android:layout_width="00dp"
+        android:layout_height="@dimen/_18sdp"
+        android:background="@drawable/parallelogram_shape"/>
+
+    <View
+        android:id="@+id/v7"
+        android:layout_width="00dp"
+        android:layout_height="@dimen/_18sdp"
+        android:layout_weight="1"
+        android:background="@drawable/parallelogram_shape"/>
+
+    <View
+        android:id="@+id/v8"
+        android:layout_width="00dp"
+        android:layout_height="@dimen/_18sdp"
+        android:layout_weight="1"
+        android:background="@drawable/parallelogram_shape"/>
+
+    <View
+        android:id="@+id/v9"
+        android:layout_width="00dp"
+        android:layout_height="@dimen/_18sdp"
+        android:layout_weight="1"
+        android:background="@drawable/parallelogram_shape"/>
+
+    <View
+        android:id="@+id/v10"
+        android:layout_width="00dp"
+        android:layout_height="@dimen/_18sdp"
+        android:layout_weight="1"
+        android:background="@drawable/parallelogram_shape"/>
+
+    <View
+        android:id="@+id/v11"
+        android:layout_width="00dp"
+        android:layout_height="@dimen/_18sdp"
+        android:layout_weight="1"
+        android:background="@drawable/parallelogram_shape"/>
+</LinearLayout>

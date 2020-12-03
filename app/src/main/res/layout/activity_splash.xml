@@ -9,7 +9,7 @@
         android:id="@+id/iv_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/splash_bg"/>
+        android:background="@drawable/splash_bg_players"/>
 
     <FrameLayout
         android:layout_width="match_parent"
