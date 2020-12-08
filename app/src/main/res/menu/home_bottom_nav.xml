@@ -13,8 +13,8 @@
 
     <item
         android:id="@id/homeFragment"
-        android:icon="@drawable/ic_trophy"
-        android:title="Challenges"/>
+        android:icon="@drawable/ic_search"
+        android:title="Search"/>
 
     <item
         android:id="@id/homeFragment"

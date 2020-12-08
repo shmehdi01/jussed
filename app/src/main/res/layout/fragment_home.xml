@@ -21,11 +21,10 @@
 
         <ImageView
             android:id="@+id/iv_menu"
-            android:layout_width="@dimen/_35sdp"
+            android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_35sdp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:padding="@dimen/_8sdp"
-            android:src="@drawable/ic_menu_icon" />
+            android:layout_marginStart="-20dp"
+            android:src="@drawable/logo" />
 
         <FrameLayout
             android:layout_width="0dp"
@@ -38,6 +37,7 @@
             android:layout_height="@dimen/_32sdp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:padding="@dimen/_8sdp"
+            android:visibility="gone"
             android:src="@drawable/ic_search" />
 
         <ImageView
@@ -102,7 +102,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_regular"
-                        android:text="Wallet"
+                        android:text="Current Balance"
                         android:textColor="@color/colorGreyLight"
                         android:textSize="@dimen/_10ssp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -138,7 +138,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:fontFamily="@font/poppins_regular"
-                        android:text="On bet"
+                        android:text="Pending Wagers"
                         android:textAlignment="textEnd"
                         android:textColor="#707171"
                         android:textSize="@dimen/_10ssp"
@@ -446,7 +446,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/player"
+                        android:text="Player Pick up"
                         android:textColor="@color/colorDarkText"
                         android:textSize="@dimen/_22ssp"
                         android:fontFamily="@font/poppins_bold"/>
@@ -499,7 +499,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/team"
+                        android:text="Pick Em"
                         android:textColor="@color/colorDarkText"
                         android:textSize="@dimen/_22ssp"
                         android:fontFamily="@font/poppins_bold"/>
