@@ -6,16 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.NumberPicker
-import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.transition.TransitionInflater
 import com.ads.juused.R
 import com.ads.juused.base.BaseFragment
 import com.ads.juused.databinding.FragmentCountryBinding
-import com.ads.juused.utility.showToast
 import com.ads.juused.utility.toDp
-import solo.android.ui.base.BaseViewModel
+import com.ads.juused.base.BaseViewModel
 
 
 class CountryFragment : BaseFragment<BaseViewModel, FragmentCountryBinding>() {

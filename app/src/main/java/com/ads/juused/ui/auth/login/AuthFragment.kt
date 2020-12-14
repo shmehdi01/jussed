@@ -14,7 +14,7 @@ import com.ads.juused.adapter.AuthSliderAdapter
 import com.ads.juused.base.BaseFragment
 import com.ads.juused.databinding.FragmentAuthBinding
 import com.ads.juused.utility.*
-import solo.android.ui.base.BaseViewModel
+import com.ads.juused.base.BaseViewModel
 
 
 class AuthFragment : BaseFragment<BaseViewModel, FragmentAuthBinding>() {

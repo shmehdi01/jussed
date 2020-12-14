@@ -11,7 +11,7 @@ import com.ads.juused.R
 import com.ads.juused.base.BaseFragment
 import com.ads.juused.databinding.FragmentJackpotDetailBinding
 import com.ads.juused.ui.jackpot.adapters.TeamsAdapter
-import solo.android.ui.base.BaseViewModel
+import com.ads.juused.base.BaseViewModel
 
 class JackpotDetailFragment : BaseFragment<BaseViewModel, FragmentJackpotDetailBinding>() {
 

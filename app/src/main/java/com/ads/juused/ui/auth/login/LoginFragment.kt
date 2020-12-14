@@ -6,7 +6,6 @@ import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
 import android.view.animation.TranslateAnimation
 import android.widget.TextView
 import androidx.navigation.NavController
@@ -18,7 +17,7 @@ import com.ads.juused.base.BaseFragment
 import com.ads.juused.databinding.FragmentLoginBinding
 import com.ads.juused.ui.home.HomeActivity
 import com.ads.juused.utility.*
-import solo.android.ui.base.BaseViewModel
+import com.ads.juused.base.BaseViewModel
 
 class LoginFragment : BaseFragment<BaseViewModel,FragmentLoginBinding>() {
 

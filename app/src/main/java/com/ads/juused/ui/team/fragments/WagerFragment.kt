@@ -12,7 +12,7 @@ import com.ads.juused.base.BaseFragment
 import com.ads.juused.databinding.FragmentWagerBinding
 import com.ads.juused.ui.team.adapter.WagerMatchableAdapter
 import com.ads.juused.utility.*
-import solo.android.ui.base.BaseViewModel
+import com.ads.juused.base.BaseViewModel
 
 
 class WagerFragment: BaseFragment<BaseViewModel, FragmentWagerBinding>() {

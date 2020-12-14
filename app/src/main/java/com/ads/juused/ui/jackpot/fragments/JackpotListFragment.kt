@@ -1,7 +1,6 @@
 package com.ads.juused.ui.jackpot.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,10 +9,9 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ads.juused.R
 import com.ads.juused.base.BaseFragment
-import com.ads.juused.databinding.FragmentJackpotDetailBinding
 import com.ads.juused.databinding.FragmentJackpotListBinding
 import com.ads.juused.ui.jackpot.adapters.JackpotAdapter
-import solo.android.ui.base.BaseViewModel
+import com.ads.juused.base.BaseViewModel
 
 class JackpotListFragment : BaseFragment<BaseViewModel, FragmentJackpotListBinding>() {
 

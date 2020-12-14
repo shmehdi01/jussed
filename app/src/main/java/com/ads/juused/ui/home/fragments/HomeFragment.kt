@@ -16,7 +16,7 @@ import com.ads.juused.ui.jackpot.JackpotActivity
 import com.ads.juused.ui.team.TeamActivity
 import com.ads.juused.utility.setBgColorAnim
 import com.ads.juused.utility.tint
-import solo.android.ui.base.BaseViewModel
+import com.ads.juused.base.BaseViewModel
 
 class HomeFragment : BaseFragment<BaseViewModel,FragmentHomeBinding>(), View.OnClickListener {
 

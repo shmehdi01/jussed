@@ -12,10 +12,9 @@ import com.ads.juused.R
 import com.ads.juused.base.BaseFragment
 import com.ads.juused.databinding.FragmentMobileBinding
 import com.ads.juused.utility.disableView
-import com.ads.juused.utility.isEmail
 import com.ads.juused.utility.isMobileNumber
 import com.ads.juused.utility.trimText
-import solo.android.ui.base.BaseViewModel
+import com.ads.juused.base.BaseViewModel
 
 
 class MobileFragment : BaseFragment<BaseViewModel, FragmentMobileBinding>() {

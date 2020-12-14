@@ -16,7 +16,7 @@ import com.ads.juused.base.BaseFragment
 import com.ads.juused.databinding.FragmentRegisterBinding
 import com.ads.juused.utility.*
 import com.yalantis.ucrop.UCrop
-import solo.android.ui.base.BaseViewModel
+import com.ads.juused.base.BaseViewModel
 
 
 class RegisterFragment :  BaseFragment<BaseViewModel, FragmentRegisterBinding>() {

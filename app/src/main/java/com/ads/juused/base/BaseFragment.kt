@@ -1,6 +1,5 @@
 package com.ads.juused.base
 
-import android.media.Image
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,15 +7,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.transition.ChangeBounds
+import androidx.lifecycle.Observer
 import androidx.viewbinding.ViewBinding
 import com.ads.juused.R
 import com.ads.juused.utility.invisible
+import com.ads.juused.utility.showSnack
 import com.ads.juused.utility.visible
 
-abstract class BaseFragment<VM:ViewModel,B:ViewBinding>: Fragment() {
+abstract class BaseFragment<VM:BaseViewModel,B:ViewBinding>: Fragment() {
 
     lateinit var binding: B
     lateinit var viewModel: VM
@@ -40,6 +38,8 @@ abstract class BaseFragment<VM:ViewModel,B:ViewBinding>: Fragment() {
                 it.setOnClickListener { requireActivity().onBackPressed() }
             }
         }
+
+        observeLiveData()
     }
 
     abstract fun getViewModel() : Class<VM>
@@ -71,6 +71,19 @@ abstract class BaseFragment<VM:ViewModel,B:ViewBinding>: Fragment() {
     }
 
     open fun validate(showToast: Boolean = false, call: () -> Unit): Boolean {
-        return true
+        return true.also { call() }
+    }
+
+    /**
+     *  TO OBSERVE LIVE DATA OVERRIDE THIS METHOD IN YOUR FRAGMENT
+     *  By default it will observe error from BaseViewModel.
+     *  Make sure your view model inherit BaseViewModel.
+     */
+    open fun observeLiveData() {
+        if (this::viewModel.isInitialized) {
+            viewModel.error.observe(viewLifecycleOwner, Observer {
+                view?.showSnack(it.errorMessage)
+            })
+        }
     }
 }

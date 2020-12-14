@@ -2,7 +2,6 @@ package com.ads.juused.ui.jackpot.fragments
 
 import android.os.Bundle
 import android.util.TypedValue
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,10 +13,8 @@ import com.ads.juused.R
 import com.ads.juused.base.BaseFragment
 import com.ads.juused.databinding.FragmentPlayerSelectionBinding
 import com.ads.juused.ui.jackpot.adapters.ChoosePlayerAdapter
-import com.ads.juused.utility.setBgColorAnim
 import com.ads.juused.utility.tint
-import com.ads.juused.utility.toDp
-import solo.android.ui.base.BaseViewModel
+import com.ads.juused.base.BaseViewModel
 
 
 class PlayerSelectionFragment : BaseFragment<BaseViewModel,FragmentPlayerSelectionBinding>(),

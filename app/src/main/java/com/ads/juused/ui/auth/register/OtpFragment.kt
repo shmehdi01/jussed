@@ -15,7 +15,7 @@ import com.ads.juused.base.BaseFragment
 import com.ads.juused.databinding.FragmentOtpBinding
 import com.ads.juused.utility.disableView
 import com.ads.juused.utility.trimText
-import solo.android.ui.base.BaseViewModel
+import com.ads.juused.base.BaseViewModel
 
 
 class OtpFragment : BaseFragment<BaseViewModel, FragmentOtpBinding>() {

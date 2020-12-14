@@ -1,7 +1,6 @@
 package com.ads.juused.ui.team.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,10 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ads.juused.R
 import com.ads.juused.base.BaseFragment
 import com.ads.juused.databinding.FragmentTeamContestsBinding
-import com.ads.juused.databinding.FragmentTeamLeagueBinding
 import com.ads.juused.ui.team.adapter.TeamContestAdapter
-import com.ads.juused.ui.team.adapter.TeamLeagueAdapter
-import solo.android.ui.base.BaseViewModel
+import com.ads.juused.base.BaseViewModel
 
 
 class TeamContestFragment : BaseFragment<BaseViewModel,FragmentTeamContestsBinding>() {

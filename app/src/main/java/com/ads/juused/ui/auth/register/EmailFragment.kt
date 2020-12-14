@@ -14,7 +14,7 @@ import com.ads.juused.databinding.FragmentEmailBinding
 import com.ads.juused.utility.disableView
 import com.ads.juused.utility.isEmail
 import com.ads.juused.utility.trimText
-import solo.android.ui.base.BaseViewModel
+import com.ads.juused.base.BaseViewModel
 
 
 class EmailFragment :  BaseFragment<BaseViewModel, FragmentEmailBinding>() {
