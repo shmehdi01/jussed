@@ -13,8 +13,17 @@ import com.ads.juused.databinding.FragmentWagerBinding
 import com.ads.juused.ui.team.adapter.WagerMatchableAdapter
 import com.ads.juused.utility.*
 import com.ads.juused.base.BaseViewModel
+import com.ads.juused.ui.player.PlayerPickupActivity
+import com.ads.juused.ui.team.TeamActivity
 
-
+/**
+ *  WagerFragment:
+ *  -------------------------------------------------
+ *  This fragment is open from:
+ *  ---------------------------
+ *  1.TeamActivity and
+ *  2.PlayerPickUpActivity
+ */
 class WagerFragment: BaseFragment<BaseViewModel, FragmentWagerBinding>() {
 
     private lateinit var navController: NavController
@@ -27,6 +36,7 @@ class WagerFragment: BaseFragment<BaseViewModel, FragmentWagerBinding>() {
         setToolbar(title = getString(R.string.wager), tailIcon = R.drawable.ic_help)
         setUpRecycler()
         bindClicks()
+        handleUiVisibility()
     }
 
     override fun getViewModel(): Class<BaseViewModel> = BaseViewModel::class.java
@@ -50,7 +60,20 @@ class WagerFragment: BaseFragment<BaseViewModel, FragmentWagerBinding>() {
 
     private fun bindClicks() {
         binding.btnPutWager.setOnClickListener {
-            navController.navigate(R.id.action_wagerFragment_to_confrimWagerFragment)
+            when(requireActivity()) {
+                is TeamActivity -> navController.navigate(R.id.action_wagerFragment_to_confrimWagerFragment)
+                is PlayerPickupActivity -> navController.navigate(R.id.action_wagerFragment_to_confirmPlayerPickUpFragment)
+            }
+        }
+    }
+
+    private fun handleUiVisibility() {
+        when(requireActivity()) {
+            is TeamActivity -> {}
+            is PlayerPickupActivity -> {
+                binding.tvTeamName.gone()
+                binding.tvPickWagerSize.gone()
+            }
         }
     }
 

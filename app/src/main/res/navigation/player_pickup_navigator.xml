@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/player_pick_up_nav"
+    app:startDestination="@id/teamLeagueFragment">
+
+    <fragment
+        android:id="@+id/teamLeagueFragment"
+        android:name="com.ads.juused.ui.team.fragments.TeamLeagueFragment"
+        android:label="fragment_team_league"
+        tools:layout="@layout/fragment_team_league" >
+
+        <action
+            android:id="@+id/action_teamLeagueFragment_to_leagueOptionFragment"
+            app:destination="@id/leagueOptionFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/wagerFragment"
+        android:name="com.ads.juused.ui.team.fragments.WagerFragment"
+        android:label="fragment_wager"
+        tools:layout="@layout/fragment_wager" >
+        <action
+            android:id="@+id/action_wagerFragment_to_confirmPlayerPickUpFragment"
+            app:destination="@id/confirmPlayerPickUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/leagueOptionFragment"
+        android:name="com.ads.juused.ui.player.fragments.PlayerLeagueOptionFragment"
+        android:label="fragment_league_option"
+        tools:layout="@layout/fragment_player_league_option" >
+        <action
+            android:id="@+id/action_leagueOptionFragment_to_matchesFragment"
+            app:destination="@id/matchesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/matchesFragment"
+        android:name="com.ads.juused.ui.player.fragments.MatchesFragment"
+        android:label="fragment_matches"
+        tools:layout="@layout/fragment_matches" >
+        <action
+            android:id="@+id/action_matchesFragment_to_wagerFragment"
+            app:destination="@id/wagerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/confirmPlayerPickUpFragment"
+        android:name="com.ads.juused.ui.player.fragments.ConfirmPlayerPickUpFragment"
+        android:label="fragment_confirm_player_pickup"
+        tools:layout="@layout/fragment_confirm_player_pickup" />
+
+</navigation>

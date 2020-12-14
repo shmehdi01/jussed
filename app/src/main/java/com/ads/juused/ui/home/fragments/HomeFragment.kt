@@ -17,6 +17,7 @@ import com.ads.juused.ui.team.TeamActivity
 import com.ads.juused.utility.setBgColorAnim
 import com.ads.juused.utility.tint
 import com.ads.juused.base.BaseViewModel
+import com.ads.juused.ui.player.PlayerPickupActivity
 
 class HomeFragment : BaseFragment<BaseViewModel,FragmentHomeBinding>(), View.OnClickListener {
 
@@ -82,16 +83,12 @@ class HomeFragment : BaseFragment<BaseViewModel,FragmentHomeBinding>(), View.OnC
         binding.llNfl.setOnClickListener(this)
         binding.llBaseball.setOnClickListener(this)
 
-        binding.ivSearch.setOnClickListener {
-
-        }
-
         binding.ivNotification.setOnClickListener {
 
         }
 
-        binding.ivMenu.setOnClickListener {
-
+        binding.flPlayer.setOnClickListener {
+            startActivity(Intent(requireActivity(), PlayerPickupActivity::class.java))
         }
 
         binding.flTeam.setOnClickListener {

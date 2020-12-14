@@ -9,12 +9,21 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ads.juused.R
 import com.ads.juused.base.BaseFragment
-import com.ads.juused.databinding.FragmentTeamLeagueBinding
-import com.ads.juused.ui.team.adapter.TeamLeagueAdapter
 import com.ads.juused.base.BaseViewModel
+import com.ads.juused.databinding.FragmentTeamLeagueBinding
+import com.ads.juused.ui.player.PlayerPickupActivity
+import com.ads.juused.ui.team.TeamActivity
+import com.ads.juused.ui.team.adapter.TeamLeagueAdapter
 
-
-class TeamLeagueFragment : BaseFragment<BaseViewModel,FragmentTeamLeagueBinding>() {
+/**
+ *  TeamLeagueFragment: It shows the list of leagues.
+ *  -------------------------------------------------
+ *  This fragment is open from:
+ *  ---------------------------
+ *  1.TeamActivity and
+ *  2.PlayerPickUpActivity
+ */
+class TeamLeagueFragment : BaseFragment<BaseViewModel, FragmentTeamLeagueBinding>() {
 
     private lateinit var navController: NavController
 
@@ -23,7 +32,7 @@ class TeamLeagueFragment : BaseFragment<BaseViewModel,FragmentTeamLeagueBinding>
 
         navController = Navigation.findNavController(view)
 
-        setToolbar(title = getString(R.string.team_leagues))
+        setToolbar(title = getToolbarTitle())
         setUpRecycler()
     }
 
@@ -32,14 +41,27 @@ class TeamLeagueFragment : BaseFragment<BaseViewModel,FragmentTeamLeagueBinding>
     override fun getViewBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
-    ): FragmentTeamLeagueBinding = FragmentTeamLeagueBinding.inflate(inflater,container,false)
+    ): FragmentTeamLeagueBinding = FragmentTeamLeagueBinding.inflate(inflater, container, false)
 
     private fun setUpRecycler() {
         binding.rcvTeam.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = TeamLeagueAdapter() {
-                navController.navigate(R.id.action_teamLeagueFragment_to_teamContestFragment)
+
+                when (requireActivity()) {
+                    is TeamActivity -> navController.navigate(R.id.action_teamLeagueFragment_to_teamContestFragment)
+                    is PlayerPickupActivity -> navController.navigate(R.id.action_teamLeagueFragment_to_leagueOptionFragment)
+                }
+
+            }.also {
+                it.hideDateAndTime(requireActivity() is PlayerPickupActivity)
             }
         }
+    }
+
+    private fun getToolbarTitle() = when (requireActivity()) {
+        is TeamActivity -> getString(R.string.team_leagues)
+        is PlayerPickupActivity -> getString(R.string.leagues)
+        else -> ""
     }
 }

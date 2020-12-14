@@ -2,11 +2,14 @@ package com.ads.juused.utility
 
 import android.animation.*
 import android.app.Activity
+import android.app.Dialog
 import android.content.*
 import android.content.Context.CLIPBOARD_SERVICE
 import android.content.pm.PackageManager
 import android.content.res.ColorStateList
+import android.graphics.Bitmap
 import android.graphics.Color
+import android.graphics.Rect
 import android.graphics.Typeface
 import android.net.Uri
 import android.provider.Settings
@@ -32,7 +35,6 @@ import androidx.viewpager.widget.ViewPager
 import com.ads.juused.BuildConfig
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
-import com.rd.animation.type.ColorAnimation
 import kotlin.math.roundToInt
 
 //import io.reactivex.Observable
@@ -475,4 +477,28 @@ fun TextView.italic() {
 
 fun TextView.boldItalic() {
     setTypeface(typeface, Typeface.BOLD_ITALIC)
+}
+
+fun Dialog.justifyWidth() {
+    val width: Int = context.resources.displayMetrics.widthPixels
+    val lp = window?.attributes
+    lp!!.dimAmount = 0.7f
+    lp.copyFrom(window?.attributes)
+    lp.width = ((width - width * 0.1).toInt())
+}
+
+fun Activity.takeScreenshot(): Bitmap {
+    val view: View = window.decorView
+    view.isDrawingCacheEnabled = true
+    view.buildDrawingCache()
+    val b1: Bitmap = view.drawingCache
+    val frame = Rect()
+    window.decorView.getWindowVisibleDisplayFrame(frame)
+    val statusBarHeight: Int = frame.top
+    val width: Int = windowManager.defaultDisplay.width
+    val height: Int = windowManager.defaultDisplay.height
+
+    val b: Bitmap = Bitmap.createBitmap(b1, 0, statusBarHeight, width, height - statusBarHeight)
+    view.destroyDrawingCache()
+    return b
 }
