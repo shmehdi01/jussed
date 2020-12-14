@@ -27,17 +27,6 @@ class WagerFragment: BaseFragment<BaseViewModel, FragmentWagerBinding>() {
         setToolbar(title = getString(R.string.wager), tailIcon = R.drawable.ic_help)
         setUpRecycler()
         bindClicks()
-
-        binding.etAmount.setOnFocusChangeListener { _, isFocus ->
-            if(isFocus) {
-                binding.cardNotMatchable.visbleWithFade(duration = 700)
-                binding.cardMatchable.changeWidth(200f.toDp(requireContext()), duration = 300)
-            }
-            else {
-                binding.cardNotMatchable.goneWithFade()
-            }
-
-        }
     }
 
     override fun getViewModel(): Class<BaseViewModel> = BaseViewModel::class.java
@@ -62,6 +51,19 @@ class WagerFragment: BaseFragment<BaseViewModel, FragmentWagerBinding>() {
     private fun bindClicks() {
         binding.btnPutWager.setOnClickListener {
             navController.navigate(R.id.action_wagerFragment_to_confrimWagerFragment)
+        }
+    }
+
+    @Deprecated("removed by client")
+    private fun notAvailableWagerAnimator() {
+        binding.etAmount.setOnFocusChangeListener { _, isFocus ->
+            if(isFocus) {
+                binding.cardNotMatchable.visbleWithFade(duration = 700)
+                binding.cardMatchable.changeWidth(200f.toDp(requireContext()), duration = 300)
+            }
+            else {
+                binding.cardNotMatchable.goneWithFade()
+            }
         }
     }
 

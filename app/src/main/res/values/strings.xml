@@ -100,4 +100,5 @@
     <string name="vs">Vs</string>
     <string name="pph_rank">PPH Rank</string>
     <string name="opp_pph_rank">Opp. PPH Rank</string>
+    <string name="available_balance">Available Balance: $ 58.00</string>
 </resources>

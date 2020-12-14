@@ -29,17 +29,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/_16sdp"
+            android:textSize="@dimen/_16ssp"
+            android:layout_marginTop="@dimen/_8sdp"
             android:textColor="@color/colorGreyLight"
-            android:fontFamily="@font/montserrat_bold"
+            android:fontFamily="@font/poppins_bold"
             android:text="Vivo IPL 2020"/>
 
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:src="@mipmap/ic_launcher"/>
+            android:layout_width="@dimen/_52sdp"
+            android:layout_height="@dimen/_52sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:src="@raw/vivo_ipl"/>
 
         <TextView
             android:layout_width="wrap_content"

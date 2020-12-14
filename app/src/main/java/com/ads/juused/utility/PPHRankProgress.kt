@@ -17,8 +17,8 @@ class PPHRankProgress(progress: Double, binding: MutlitColorProgressBinding) {
         Color.parseColor("#ADFF30"),
         Color.parseColor("#37FF30"),
         Color.parseColor("#30FF97"),
-        Color.parseColor("#30F1FF"),
-        Color.parseColor("#30B8FF")
+        Color.parseColor("#30B8FF"),
+        Color.parseColor("#30F1FF")
     )
 
     val disabledColor = Color.parseColor("#2D2D2D")
