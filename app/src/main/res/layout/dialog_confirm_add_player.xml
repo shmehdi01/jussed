@@ -1,18 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/_8sdp"
-    app:cardBackgroundColor="@color/colorBlackCard"
-    app:cardCornerRadius="@dimen/_4sdp"
-    app:cardElevation="0dp">
+    android:paddingBottom="@dimen/_12sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorBlackCard">
+
+
+    <LinearLayout
+        android:id="@+id/ll_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#202020"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="@dimen/_8sdp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Are you sure"/>
+
+        <TextView
+            android:id="@+id/tv_sub_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_10ssp"
+            android:fontFamily="@font/poppins_light"
+            android:text="to add this player to roster"/>
+    </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_item"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingHorizontal="@dimen/_8sdp">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        app:layout_constraintTop_toBottomOf="@id/ll_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingHorizontal="@dimen/_18sdp">
 
         <FrameLayout
             android:id="@+id/fl_avatar"
@@ -71,22 +106,6 @@
                 android:textColor="@color/colorBlack"
                 android:textSize="@dimen/_8ssp" />
 
-            <FrameLayout
-                android:layout_width="@dimen/_8sdp"
-                android:layout_height="@dimen/_8sdp"
-                android:layout_marginStart="@dimen/_4sdp"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:background="@color/colorWhite" />
-
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:src="@drawable/ic_information_button" />
-
         </FrameLayout>
 
         <TextView
@@ -111,7 +130,7 @@
             android:text="KKR"
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/_12ssp"
-            app:layout_constraintEnd_toStartOf="@id/tv_points"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tv_vs"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -136,7 +155,7 @@
             android:textAlignment="textEnd"
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/_8ssp"
-            app:layout_constraintEnd_toStartOf="@id/tv_plus"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tv_pph_rank"
             app:layout_constraintTop_toBottomOf="@id/tv_vs"
             tools:text="100.0" />
@@ -148,7 +167,7 @@
             android:layout_height="15dp"
             android:layout_marginTop="@dimen/_2sdp"
             android:layout_marginEnd="@dimen/_8sdp"
-            app:layout_constraintEnd_toStartOf="@id/tv_plus"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/fl_avatar"
             app:layout_constraintTop_toBottomOf="@id/tv_pph_rank" />
 
@@ -174,7 +193,7 @@
             android:textAlignment="textEnd"
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/_8ssp"
-            app:layout_constraintEnd_toStartOf="@id/tv_plus"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tv_opp_pph_rank"
             app:layout_constraintTop_toBottomOf="@id/progress_pph"
             tools:text="100.0" />
@@ -186,55 +205,62 @@
             android:layout_height="15dp"
             android:layout_marginTop="@dimen/_2sdp"
             android:layout_marginEnd="@dimen/_8sdp"
-            app:layout_constraintEnd_toStartOf="@id/tv_plus"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/fl_avatar"
             app:layout_constraintTop_toBottomOf="@id/tv_opp_pph_rank" />
 
-        <TextView
-            android:id="@+id/tv_points"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_8sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/_12sdp"
-            android:fontFamily="@font/poppins_regular"
-            android:text="10.0"
-            android:visibility="visible"
-            android:textColor="@color/colorWhite"
-            android:textSize="@dimen/_12ssp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tv_opt_team_name"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_plus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_8sdp"
-            android:layout_marginBottom="8dp"
-            app:layout_goneMarginTop="@dimen/_26sdp"
-            android:background="@drawable/bg_outline_cyan"
-            android:fontFamily="@font/poppins_regular"
-            android:paddingHorizontal="@dimen/_10sdp"
-            android:paddingVertical="@dimen/_6sdp"
-            android:text="+"
-            android:textColor="@color/colorCyanAccent"
-            android:textSize="@dimen/_18ssp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_points" />
-
-        <ImageView
-            android:id="@+id/iv_favorite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_8sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/_12sdp"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:visibility="gone"
-            app:layout_constraintStart_toEndOf="@id/tv_opt_team_name"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/ic_star_outline" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/iv_divider"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        app:layout_constraintTop_toBottomOf="@id/cl_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/colorRedAccent"
+        />
+
+    <Button
+        android:id="@+id/btn_no"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginStart="@dimen/_28sdp"
+        android:layout_marginEnd="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/bg_login_btn"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="No"
+        android:textAllCaps="false"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@id/iv_divider"
+        app:layout_constraintEnd_toStartOf="@id/btn_yes"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_yes"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_28sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/bg_login_btn"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Yes"
+        android:textAllCaps="false"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:textColor="@color/colorWhite"
+        android:backgroundTint="@color/colorCyanAccent"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@id/iv_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_no" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

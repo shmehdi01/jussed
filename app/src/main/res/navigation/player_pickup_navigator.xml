@@ -53,6 +53,15 @@
         android:id="@+id/confirmPlayerPickUpFragment"
         android:name="com.ads.juused.ui.player.fragments.ConfirmPlayerPickUpFragment"
         android:label="fragment_confirm_player_pickup"
-        tools:layout="@layout/fragment_confirm_player_pickup" />
+        tools:layout="@layout/fragment_confirm_player_pickup" >
+        <action
+            android:id="@+id/action_confirmPlayerPickUpFragment_to_playerSelectionFragment2"
+            app:destination="@id/playerSelectionFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/playerSelectionFragment2"
+        android:name="com.ads.juused.ui.jackpot.fragments.PlayerSelectionFragment"
+        android:label="fragment_player_selection"
+        tools:layout="@layout/fragment_player_selection" />
 
 </navigation>

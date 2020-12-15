@@ -1,25 +1,32 @@
 package com.ads.juused.ui.jackpot.adapters
 
-import android.graphics.Color
-import android.graphics.drawable.AnimationDrawable
-import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.ads.juused.R
 import com.ads.juused.databinding.ItemPlayerAddBinding
 import com.ads.juused.utility.PPHRankProgress
+import com.ads.juused.utility.show
 
 
-class ChoosePlayerAdapter() :
+class ChoosePlayerAdapter(private val onAdd: (() -> Unit)? = null) :
     ListAdapter<Any, ChoosePlayerAdapter.ChoosePlayerViewHolder>(diffUtil) {
 
     inner class ChoosePlayerViewHolder(val binding: ItemPlayerAddBinding) :
-        RecyclerView.ViewHolder(binding.root)
+        RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            showFavoriteIcon(showFavoriteIcon)
+        }
+
+        private fun showFavoriteIcon(show: Boolean) {
+            binding.ivFavorite.show(show)
+            binding.tvPoints.show(!show)
+        }
+    }
+
+    private var showFavoriteIcon: Boolean = false
 
     companion object {
 
@@ -45,6 +52,7 @@ class ChoosePlayerAdapter() :
         PPHRankProgress( dummyProgress[position], holder.binding.progressPph)
         PPHRankProgress( dummyProgress2[position], holder.binding.progressOppPph)
 
+        holder.binding.tvPlus.setOnClickListener { onAdd?.invoke() }
     }
 
     private val dummyProgress = arrayListOf(100.0, 80.0,93.0,100.0,85.0,100.0)
@@ -52,5 +60,9 @@ class ChoosePlayerAdapter() :
 
     override fun getItemCount(): Int {
         return 6
+    }
+
+    fun showFavoriteIcon(show: Boolean) {
+        this.showFavoriteIcon = show
     }
 }

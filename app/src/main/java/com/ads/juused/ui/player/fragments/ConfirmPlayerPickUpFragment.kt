@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.ads.juused.R
 import com.ads.juused.base.BaseFragment
 import com.ads.juused.base.BaseViewModel
 import com.ads.juused.databinding.FragmentConfirmPlayerPickupBinding
@@ -29,8 +30,7 @@ class ConfirmPlayerPickUpFragment:  BaseFragment<BaseViewModel, FragmentConfirmP
             DialogBetPlaced(requireContext()).apply {
                 show()
                 setOnDismissListener {
-                    startActivity(Intent(requireContext(), HomeActivity::class.java))
-                    requireActivity().finish()
+                    navController.navigate(R.id.action_confirmPlayerPickUpFragment_to_playerSelectionFragment2)
                 }
             }
         }

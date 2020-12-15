@@ -21,15 +21,11 @@
             android:layout_height="match_parent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cl_header"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="@dimen/_8sdp"
                 android:background="@color/colorBlackCard"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:orientation="vertical">
 
                 <include
                     android:id="@+id/layout_toolbar"
@@ -38,129 +34,257 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-
-                <TextView
-                    android:id="@+id/label_max_20"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_8sdp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="@string/max_20_players_from_a_team"
-                    android:textColor="@color/colorHomeOption"
-                    android:textSize="@dimen/_8ssp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/layout_toolbar" />
-
-                <TextView
-                    android:id="@+id/tv_player"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_16sdp"
-                    android:layout_marginTop="@dimen/_16sdp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="@string/players"
-                    android:textColor="@color/colorHomeOption"
-                    android:textSize="@dimen/_9ssp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/label_max_20" />
-
-                <LinearLayout
-                    android:id="@+id/ll_teams_logo"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_12sdp"
-                    android:layout_marginTop="@dimen/_8sdp"
-                    android:layout_marginEnd="@dimen/_12sdp"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    app:layout_constraintEnd_toStartOf="@id/tv_credit_left"
-                    app:layout_constraintStart_toEndOf="@id/tv_player"
-                    app:layout_constraintTop_toBottomOf="@id/label_max_20">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:src="@drawable/kkr_logo" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:src="@drawable/kkr_logo" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:src="@drawable/kkr_logo" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:src="@drawable/kkr_logo" />
-
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/tv_credit_left"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_16sdp"
-                    android:layout_marginEnd="@dimen/_16sdp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="@string/credits_left"
-                    android:textColor="@color/colorHomeOption"
-                    android:textSize="@dimen/_9ssp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/ll_teams_logo"
-                    app:layout_constraintTop_toBottomOf="@id/label_max_20" />
-
-
-                <TextView
-                    android:id="@+id/tv_player_count"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="0"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/_14ssp"
-                    app:layout_constraintEnd_toStartOf="@id/ll_teams_logo"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_player" />
-
-                <TextView
-                    android:id="@+id/tv_credit_count"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="100.0"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/_14ssp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/ll_teams_logo"
-                    app:layout_constraintTop_toBottomOf="@id/tv_credit_left" />
-
-                <SeekBar
-                    android:id="@+id/seek_bar"
-                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_header_jackpot"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_14sdp"
-                    android:layout_marginTop="@dimen/_16sdp"
-                    android:layout_marginEnd="@dimen/_14sdp"
-                    android:maxHeight="@dimen/_8sdp"
-                    android:progress="30"
-                    android:progressDrawable="@drawable/seekbar_style"
-                    android:splitTrack="false"
-                    android:thumb="@drawable/seekbar_thumb"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:visibility="visible"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/ll_teams_logo" />
+                    app:layout_constraintTop_toTopOf="parent">
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:id="@+id/label_max_20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/max_20_players_from_a_team"
+                        android:textColor="@color/colorHomeOption"
+                        android:textSize="@dimen/_8ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/tv_player"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/players"
+                        android:textColor="@color/colorHomeOption"
+                        android:textSize="@dimen/_9ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/label_max_20" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_teams_logo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toStartOf="@id/tv_credit_left"
+                        app:layout_constraintStart_toEndOf="@id/tv_player"
+                        app:layout_constraintTop_toBottomOf="@id/label_max_20">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/kkr_logo" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/kkr_logo" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/kkr_logo" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/kkr_logo" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_credit_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/credits_left"
+                        android:textColor="@color/colorHomeOption"
+                        android:textSize="@dimen/_9ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/ll_teams_logo"
+                        app:layout_constraintTop_toBottomOf="@id/label_max_20" />
+
+
+                    <TextView
+                        android:id="@+id/tv_player_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="0"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintEnd_toStartOf="@id/ll_teams_logo"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_player" />
+
+                    <TextView
+                        android:id="@+id/tv_credit_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="100.0"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/ll_teams_logo"
+                        app:layout_constraintTop_toBottomOf="@id/tv_credit_left" />
+
+                    <SeekBar
+                        android:id="@+id/seek_bar"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_14sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:layout_marginEnd="@dimen/_14sdp"
+                        android:maxHeight="@dimen/_8sdp"
+                        android:progress="30"
+                        android:progressDrawable="@drawable/seekbar_style"
+                        android:splitTrack="false"
+                        android:thumb="@drawable/seekbar_thumb"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ll_teams_logo" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_header_player_pickup"
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/label_turn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Your turn to select"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/colorHomeOption"
+                        android:textSize="@dimen/_10ssp"/>
+
+                    <TextView
+                        android:id="@+id/tv_duration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1m 21s"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/colorRedAccent"
+                        android:textSize="@dimen/_10ssp"/>
+
+                    <LinearLayout
+                        android:id="@+id/ll_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:background="@color/colorBlackCard"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_8sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/label_turn">
+
+                        <LinearLayout
+                            android:id="@+id/ll_available"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="1dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorRedAccent"
+                            android:paddingStart="@dimen/_3sdp">
+
+                            <TextView
+                                android:id="@+id/tv_available"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/bg_outline_red"
+                                android:fontFamily="@font/poppins_regular"
+                                android:padding="@dimen/_8sdp"
+                                android:text="Available"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="@dimen/_9ssp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_favorite"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="1dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorBlack"
+                            android:paddingBottom="@dimen/_3sdp">
+
+                            <TextView
+                                android:id="@+id/tv_favorite"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorGreyLightButton"
+                                android:fontFamily="@font/poppins_regular"
+                                android:padding="@dimen/_8sdp"
+                                android:text="Favorites"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorGreyText"
+                                android:textSize="@dimen/_9ssp" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_rosters"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="1dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorCyanAccent"
+                            android:paddingEnd="@dimen/_3sdp">
+
+                            <TextView
+                                android:id="@+id/tv_rosters"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorGreyLightButton"
+                                android:fontFamily="@font/poppins_regular"
+                                android:padding="@dimen/_8sdp"
+                                android:text="Rosters"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorGreyText"
+                                android:textSize="@dimen/_9ssp" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -172,6 +296,112 @@
        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
        <LinearLayout
+           android:id="@+id/ll_option_rosters"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:background="#202020"
+           android:visibility="gone"
+           android:paddingBottom="@dimen/_2sdp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent">
+
+           <LinearLayout
+               android:id="@+id/ll_my_team"
+               android:layout_width="wrap_content"
+               android:layout_height="@dimen/_45sdp"
+               android:layout_weight="1"
+               android:background="?attr/selectableItemBackgroundBorderless"
+               android:gravity="center_horizontal"
+               android:orientation="vertical"
+               android:paddingStart="@dimen/_8sdp"
+               android:paddingEnd="@dimen/_8sdp">
+
+               <ImageView
+                   android:id="@+id/iv_my_team"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:src="@drawable/ic_my_team" />
+
+               <TextView
+                   android:id="@+id/tv_my_team"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="@dimen/_2sdp"
+                   android:fontFamily="@font/poppins_regular"
+                   android:text="My Team"
+                   android:textColor="@color/colorRedAccent"
+                   android:textSize="@dimen/_9ssp" />
+
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:id="@+id/ll_opponent"
+               android:layout_width="wrap_content"
+               android:layout_height="@dimen/_45sdp"
+               android:layout_weight="1"
+               android:background="?attr/selectableItemBackgroundBorderless"
+               android:gravity="center_horizontal"
+               android:orientation="vertical"
+               android:paddingStart="@dimen/_8sdp"
+               android:paddingEnd="@dimen/_8sdp">
+
+               <ImageView
+                   android:id="@+id/iv_opponent"
+                   android:layout_width="wrap_content"
+                   android:layout_height="0dp"
+                   android:layout_weight="1"
+                   android:src="@drawable/ic_opponent" />
+
+               <TextView
+                   android:id="@+id/tv_opponent"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="@dimen/_2sdp"
+                   android:fontFamily="@font/poppins_regular"
+                   android:text="Opponent"
+                   android:textColor="@color/colorHomeOption"
+                   android:textSize="@dimen/_9ssp" />
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:id="@+id/ll_result"
+               android:layout_width="wrap_content"
+               android:layout_height="@dimen/_45sdp"
+               android:layout_weight="1"
+               android:background="?attr/selectableItemBackgroundBorderless"
+               android:gravity="center_horizontal"
+               android:orientation="vertical"
+               android:paddingStart="@dimen/_8sdp"
+               android:paddingEnd="@dimen/_8sdp">
+
+               <ImageView
+                   android:id="@+id/iv_result"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:src="@drawable/ic_result" />
+
+               <TextView
+                   android:id="@+id/tv_result"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="@dimen/_2sdp"
+                   android:fontFamily="@font/poppins_regular"
+                   android:text="Results"
+                   android:textColor="@color/colorHomeOption"
+                   android:textSize="@dimen/_9ssp" />
+
+           </LinearLayout>
+
+
+       </LinearLayout>
+
+       <LinearLayout
+           android:visibility="visible"
            android:id="@+id/ll_option"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
@@ -179,7 +409,7 @@
            android:paddingBottom="@dimen/_2sdp"
            app:layout_constraintEnd_toEndOf="parent"
            app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toTopOf="parent">
+           app:layout_constraintTop_toBottomOf="@id/ll_option_rosters">
 
            <LinearLayout
                android:id="@+id/ll_wk"

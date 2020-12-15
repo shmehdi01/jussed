@@ -11,6 +11,7 @@ import com.ads.juused.utility.takeScreenshot
 import com.ads.juused.utility.tryBlur
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class DialogBetPlaced(context: Context): Dialog(context) {
@@ -19,6 +20,10 @@ class DialogBetPlaced(context: Context): Dialog(context) {
         setContentView(R.layout.dialog_bet_placed)
         justifyWidth()
 
+        GlobalScope.launch {
+            delay(1000)
+            dismiss()
+        }
         //tryToBlurBackground(context)
     }
 
