@@ -17,6 +17,7 @@ import com.ads.juused.ui.team.TeamActivity
 import com.ads.juused.utility.setBgColorAnim
 import com.ads.juused.utility.tint
 import com.ads.juused.base.BaseViewModel
+import com.ads.juused.ui.customized.CustomizedActivity
 import com.ads.juused.ui.player.PlayerPickupActivity
 
 class HomeFragment : BaseFragment<BaseViewModel,FragmentHomeBinding>(), View.OnClickListener {
@@ -97,6 +98,10 @@ class HomeFragment : BaseFragment<BaseViewModel,FragmentHomeBinding>(), View.OnC
 
         binding.flJackpot.setOnClickListener {
             startActivity(Intent(requireActivity(), JackpotActivity::class.java))
+        }
+
+        binding.flCustomized.setOnClickListener {
+            startActivity(Intent(requireActivity(), CustomizedActivity::class.java))
         }
     }
 

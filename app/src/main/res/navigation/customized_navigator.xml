@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_home_nav"
+    app:startDestination="@id/contestFragment">
+
+
+    <fragment
+        android:id="@+id/contestFragment"
+        android:name="com.ads.juused.ui.customized.fragments.ContestFragment"
+        android:label="fragment_contest"
+        tools:layout="@layout/fragment_contest" >
+        <action
+            android:id="@+id/action_contestFragment_to_chooseSportFragment"
+            app:destination="@id/chooseSportFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseSportFragment"
+        android:name="com.ads.juused.ui.customized.fragments.ChooseSportFragment"
+        android:label="fragment_choose_sport"
+        tools:layout="@layout/fragment_choose_sport" >
+        <action
+            android:id="@+id/action_chooseSportFragment_to_createCricketContestFragment"
+            app:destination="@id/createCricketContestFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/createCricketContestFragment"
+        android:name="com.ads.juused.ui.customized.fragments.CreateCricketContestFragment"
+        android:label="fragment_create_cricket_contest"
+        tools:layout="@layout/fragment_create_cricket_contest" />
+
+
+</navigation>
