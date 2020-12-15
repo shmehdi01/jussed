@@ -18,13 +18,13 @@ class DialogBetPlaced(context: Context): Dialog(context) {
 
     init {
         setContentView(R.layout.dialog_bet_placed)
-        justifyWidth()
+        justifyWidth(dimmedAmount = 0.9f)
 
         GlobalScope.launch {
-            delay(1000)
+            delay(2000)
             dismiss()
         }
-        //tryToBlurBackground(context)
+       // tryToBlurBackground(context)
     }
 
     private fun tryToBlurBackground(context: Context) {

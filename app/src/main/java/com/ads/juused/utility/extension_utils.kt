@@ -479,10 +479,10 @@ fun TextView.boldItalic() {
     setTypeface(typeface, Typeface.BOLD_ITALIC)
 }
 
-fun Dialog.justifyWidth() {
+fun Dialog.justifyWidth(dimmedAmount: Float = 0.7f) {
     val width: Int = context.resources.displayMetrics.widthPixels
     val lp = window?.attributes
-    lp!!.dimAmount = 0.7f
+    lp!!.dimAmount = dimmedAmount
     lp.copyFrom(window?.attributes)
     lp.width = ((width - width * 0.1).toInt())
 }

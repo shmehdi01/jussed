@@ -11,7 +11,7 @@ class DialogConfirmPlayerAdd(context:Context): Dialog(context) {
     init {
         val binding = DialogConfirmAddPlayerBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        justifyWidth()
+        justifyWidth(dimmedAmount = 0.9f)
 
         PPHRankProgress(binding = binding.progressPph,progress = 100.0)
         PPHRankProgress(binding = binding.progressOppPph,progress = 100.0)
