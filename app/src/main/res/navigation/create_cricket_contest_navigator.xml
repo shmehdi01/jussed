@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/create_cricket_contest_navigator"
+    app:startDestination="@id/createCricketContestLeagueFragment">
+
+    <fragment
+        android:id="@+id/createCricketContestLeagueFragment"
+        tools:layout="@layout/fragment_create_cricket_step_1"
+        android:name="com.ads.juused.ui.customized.fragments.cricket.CreateCricketContestLeagueFragment"
+        android:label="CreateCricketContestLeagueFragment" >
+        <action
+            android:id="@+id/action_createCricketContestLeagueFragment_to_createCricketContestScoringFragment"
+            app:destination="@id/createCricketContestScoringFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/createCricketContestScoringFragment"
+        tools:layout="@layout/fragment_create_cricket_step_2"
+        android:name="com.ads.juused.ui.customized.fragments.cricket.CreateCricketContestScoringFragment"
+        android:label="CreateCricketContestScoringFragment" >
+        <action
+            android:id="@+id/action_createCricketContestScoringFragment_to_createCricketContestRostersFragment"
+            app:destination="@id/createCricketContestRostersFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/createCricketContestRostersFragment"
+        tools:layout="@layout/fragment_create_cricket_step_3"
+        android:name="com.ads.juused.ui.customized.fragments.cricket.CreateCricketContestRostersFragment"
+        android:label="CreateCricketContestRostersFragment" >
+        <action
+            android:id="@+id/action_createCricketContestRostersFragment_to_createCricketContestFriendsFragment"
+            app:destination="@id/createCricketContestFriendsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/createCricketContestFriendsFragment"
+        tools:layout="@layout/fragment_create_cricket_step_4"
+        android:name="com.ads.juused.ui.customized.fragments.cricket.CreateCricketContestFriendsFragment"
+        android:label="CreateCricketContestFriendsFragment" />
+</navigation>

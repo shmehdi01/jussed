@@ -155,8 +155,8 @@ fun Activity.showToast(text: String, debug: Boolean = false) {
 
 }
 
-fun Fragment.showToast(text: String) {
-    Toast.makeText(activity, text, Toast.LENGTH_SHORT).show()
+fun Fragment.showToast(text: String, debug: Boolean = false) {
+    activity?.showToast(text, debug)
 }
 
 

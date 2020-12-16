@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/createCricketContestFragment"
-        android:name="com.ads.juused.ui.customized.fragments.CreateCricketContestFragment"
+        android:name="com.ads.juused.ui.customized.fragments.cricket.CreateCricketContestFragment"
         android:label="fragment_create_cricket_contest"
         tools:layout="@layout/fragment_create_cricket_contest" />
 
