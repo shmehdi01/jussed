@@ -502,3 +502,7 @@ fun Activity.takeScreenshot(): Bitmap {
     view.destroyDrawingCache()
     return b
 }
+
+fun String.toSafeInt(default: Int = 0): Int {
+    return if(this.isEmpty()) 0 else this.toInt()
+}

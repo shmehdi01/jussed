@@ -71,4 +71,13 @@ class ContestSizeAdapter(private val onSelected: (Int) -> Unit) :
         selectedIndex = -1
         notifyDataSetChanged()
     }
+
+    fun setSelection(value: Int) {
+        if(currentList.contains(value)) {
+            selectedIndex = currentList.indexOf(value)
+            notifyDataSetChanged()
+        }
+    }
+
+    fun containsValue(value: Int)  = currentList.contains(value)
 }

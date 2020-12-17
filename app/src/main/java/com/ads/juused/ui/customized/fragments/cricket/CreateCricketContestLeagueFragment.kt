@@ -14,6 +14,7 @@ import com.ads.juused.R
 import com.ads.juused.databinding.FragmentCreateCricketStep1Binding
 import com.ads.juused.ui.customized.adapters.ContestSizeAdapter
 import com.ads.juused.ui.customized.adapters.SelectedContestTypeAdapter
+import com.ads.juused.ui.dialogs.DialogCustomContestSize
 import com.ads.juused.ui.jackpot.adapters.TeamsAdapter
 import com.ads.juused.utility.*
 
@@ -46,7 +47,27 @@ class CreateCricketContestLeagueFragment : Fragment() {
         setGameSpinner()
         setContestTypeRecycler()
 
-        binding.tvCustom.setOnClickListener { }
+        binding.tvCustom.setOnClickListener {
+            DialogCustomContestSize(
+                context = requireContext(),
+                selectedSize = contestSize,
+                onCustomValueEnter = {
+
+                    if (contestSizeAdapter.containsValue(it)) {
+                        clearCustomSelection()
+                        contestSizeAdapter.setSelection(it)
+                    }
+                    else {
+                        contestSizeAdapter.clearSelection()
+                        binding.tvCustom.text = "$it"
+                        binding.tvCustom.setBackgroundResource(R.drawable.bg_red)
+                    }
+
+                    contestSize = it
+                    showHideContinueButton(true)
+
+                }).show()
+        }
     }
 
     fun showSelectedContest() {
@@ -118,7 +139,9 @@ class CreateCricketContestLeagueFragment : Fragment() {
             }
             adapter = ContestSizeAdapter() {
                 contestSize = it
+
                 showHideContinueButton(true)
+                clearCustomSelection()
 
             }.also {
                 contestSizeAdapter = it
@@ -142,6 +165,11 @@ class CreateCricketContestLeagueFragment : Fragment() {
                 fragment.enableButton(show)
             }
         }
+    }
+
+    private fun clearCustomSelection() {
+        binding.tvCustom.text = "Custom"
+        binding.tvCustom.setBackgroundResource(R.drawable.bg_outline_white)
     }
 
     val isCompleted: Boolean
